@@ -12,44 +12,23 @@ html { scroll-behavior: smooth; }
 body { font-family: Arial, sans-serif; margin:0; background:#0f172a; color:white; }
 
 /* ===== SCROLL PROGRESS BAR ===== */
-#progress-bar {
-    position:fixed; top:0; left:0; height:4px; background:#38bdf8; width:0%; z-index:9999;
-}
+#progress-bar { position:fixed; top:0; left:0; height:4px; background:#38bdf8; width:0%; z-index:9999; }
 
 /* ===== HERO SECTION ===== */
-.hero-bg {
-    position:absolute; top:0; left:0; width:100%; height:100%;
-    background: linear-gradient(270deg, #0f172a, #1e293b, #0f172a);
-    background-size: 600% 600%; z-index:-1; animation: gradientBG 20s ease infinite;
-}
-@keyframes gradientBG {
-    0% {background-position:0% 50%;}
-    50% {background-position:100% 50%;}
-    100% {background-position:0% 50%;}
-}
-header {
-    background:transparent; padding:120px 20px; text-align:center; position:relative; overflow:hidden;
-}
+.hero-bg { position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(270deg, #0f172a, #1e293b, #0f172a); background-size: 600% 600%; z-index:-1; animation: gradientBG 20s ease infinite; }
+@keyframes gradientBG { 0% {background-position:0% 50%;} 50% {background-position:100% 50%;} 100% {background-position:0% 50%;} }
+
+header { background:transparent; padding:120px 20px; text-align:center; position:relative; overflow:hidden; }
 header h1 { margin:0; font-size:60px; color:#38bdf8; }
 header .title { margin-top:10px; color:#94a3b8; font-size:20px; }
 header .dynamic-text { margin-top:15px; color:#38bdf8; font-size:18px; font-weight:bold; }
-header button {
-    margin-top:25px; background:#38bdf8; color:#0f172a; border:none; padding:14px 30px; font-size:16px; border-radius:6px; cursor:pointer;
-    transition: transform 0.3s, background 0.3s;
-}
+header button { margin-top:25px; background:#38bdf8; color:#0f172a; border:none; padding:14px 30px; font-size:16px; border-radius:6px; cursor:pointer; transition: transform 0.3s, background 0.3s; }
 header button:hover { background:#0ea5e9; transform: translateY(-3px); }
 
 /* ===== NAVIGATION ===== */
-nav {
-    background:#1e293b; text-align:center; padding:12px; position:sticky; top:0; z-index:100;
-}
-nav a {
-    color:white; margin:0 20px; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;
-    transition: color 0.3s, background 0.3s, transform 0.2s;
-}
-nav a:hover {
-    color:#0ea5e9; background: rgba(56,189,248,0.1); transform: translateY(-3px);
-}
+nav { background:#1e293b; text-align:center; padding:12px; position:sticky; top:0; z-index:100; }
+nav a { color:white; margin:0 20px; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px; transition: color 0.3s, background 0.3s, transform 0.2s; }
+nav a:hover { color:#0ea5e9; background: rgba(56,189,248,0.1); transform: translateY(-3px); }
 nav a.active { color:#38bdf8; border-bottom:2px solid #38bdf8; }
 
 /* ===== SECTIONS ===== */
@@ -57,23 +36,15 @@ nav a.active { color:#38bdf8; border-bottom:2px solid #38bdf8; }
 h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
 
 /* ===== CARDS ===== */
-.card, .project-card {
-    background:#1e293b; padding:25px; border-radius:10px;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.4s;
-    cursor:pointer;
-}
-.card:hover, .project-card:hover {
-    transform: translateY(-5px); box-shadow: 0px 8px 20px rgba(0,0,0,0.3); background:#334155;
-}
+.card, .project-card { background:#1e293b; padding:25px; border-radius:10px; transition: transform 0.3s, box-shadow 0.3s, background 0.4s; cursor:pointer; }
+.card:hover, .project-card:hover { transform: translateY(-5px); box-shadow: 0px 8px 20px rgba(0,0,0,0.3); background:#334155; }
 
 /* ===== TIMELINE ===== */
 .timeline { position:relative; margin-left:20px; }
 .timeline div { position:relative; margin-bottom:30px; padding-left:40px; transition: transform 0.3s, box-shadow 0.3s; }
 .timeline div:hover { transform: translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.3); }
-.timeline div::before {
-    content:""; position:absolute; left:0; top:0; width:15px; height:15px; background:#38bdf8; border-radius:50%;
-}
-.timeline p { margin:3px 0; color:#cbd5e1; }
+.timeline div::before { content:""; position:absolute; left:0; top:0; width:15px; height:15px; background:#38bdf8; border-radius:50%; }
+.timeline p, .timeline ul { margin:5px 0; color:#cbd5e1; }
 
 /* ===== SKILLS GRID ===== */
 .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
@@ -86,10 +57,10 @@ h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
 .skill-bar div { height:100%; background:#38bdf8; border-radius:3px; }
 
 /* ===== CONTACT ICONS ===== */
-.contact-icons a {
-    margin:0 10px; color:white; font-size:22px; transition: color 0.3s, transform 0.2s;
-}
-.contact-icons a:hover { color:#38bdf8; transform: scale(1.2); }
+.contact-item { display:flex; align-items:center; gap:15px; margin-bottom:15px; }
+.contact-item i { font-size:22px; color:#38bdf8; transition: color 0.3s, transform 0.2s; }
+.contact-item a { color:white; text-decoration:none; }
+.contact-item:hover i { transform:scale(1.2); color:#0ea5e9; }
 </style>
 </head>
 
@@ -100,98 +71,98 @@ h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
 
 <!-- HERO SECTION -->
 <header>
-    <div class="hero-bg"></div>
-    <h1>Ajay Shukla</h1>
-    <p class="title">Software Engineer | Enterprise Application Support</p>
-    <p class="dynamic-text">Learning <span id="skill">Microsoft Azure</span> & Cloud Technologies</p>
-    <button onclick="window.open('resume.pdf')"><i class="fa-solid fa-download"></i> Download Resume</button>
+  <div class="hero-bg"></div>
+  <h1>Ajay Shukla</h1>
+  <p class="title">Software Engineer | Enterprise Application Support</p>
+  <p class="dynamic-text">Learning <span id="skill">Microsoft Azure</span> & Cloud Technologies</p>
+  <button onclick="window.open('resume.pdf')"><i class="fa-solid fa-download"></i> Download Resume</button>
 </header>
 
 <!-- NAVIGATION -->
 <nav>
-<a href="#about">About</a>
-<a href="#experience">Experience</a>
-<a href="#skills">Skills</a>
-<a href="#learning">Learning</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#learning">Learning</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <!-- ABOUT -->
 <div class="section" id="about">
-<h2>About Me</h2>
-<div class="card">
-<p>IT professional with nearly three years of experience in enterprise application support and access administration. Currently working at HCLTech supporting Franklin Templeton.</p>
-<p>Passionate about Microsoft Azure & cloud technologies, focusing on identity & access management and enterprise application support.</p>
-</div>
+  <h2>About Me</h2>
+  <div class="card">
+    <p>IT professional with nearly three years of experience in enterprise application support and access administration. Currently working at HCLTech supporting Franklin Templeton.</p>
+    <p>Passionate about Microsoft Azure & cloud technologies, focusing on identity & access management and enterprise application support.</p>
+  </div>
 </div>
 
 <!-- EXPERIENCE -->
 <div class="section" id="experience">
-<h2>Experience</h2>
-<div class="timeline">
-<div>
-<h4>Software Engineer — HCLTech</h4>
-<p>Enterprise application support for Franklin Templeton environment</p>
-<ul>
-<li>Identity & Access Management (IAM)</li>
-<li>SharePoint administration & access governance</li>
-<li>Incident management & service requests</li>
-</ul>
-<p>2023 — Present</p>
-</div>
-</div>
+  <h2>Experience</h2>
+  <div class="timeline">
+    <div>
+      <h4>Software Engineer — HCLTech</h4>
+      <ul>
+        <li>Enterprise application support for Franklin Templeton environment</li>
+        <li>Identity & Access Management (IAM)</li>
+        <li>SharePoint administration & access governance</li>
+        <li>Incident management & service requests</li>
+      </ul>
+      <p>2023 — Present</p>
+    </div>
+  </div>
 </div>
 
 <!-- SKILLS -->
 <div class="section" id="skills">
-<h2>Skills</h2>
-<div class="skills-grid">
-<div class="skill-card"><i class="fa-solid fa-user-lock icon"></i>Identity & Access
-<div class="skill-bar"><div style="width:80%"></div></div>
-</div>
-<div class="skill-card"><i class="fa-solid fa-gear icon"></i>Enterprise Tools
-<div class="skill-bar"><div style="width:75%"></div></div>
-</div>
-<div class="skill-card"><i class="fa-solid fa-bolt icon"></i>Support Operations
-<div class="skill-bar"><div style="width:70%"></div></div>
-</div>
-<div class="skill-card"><i class="fa-solid fa-cloud icon"></i>Microsoft Azure / SQL
-<div class="skill-bar"><div style="width:60%"></div></div>
-</div>
-</div>
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card"><i class="fa-solid fa-user-lock icon"></i>Identity & Access
+      <div class="skill-bar"><div style="width:80%"></div></div>
+    </div>
+    <div class="skill-card"><i class="fa-solid fa-gear icon"></i>Enterprise Tools
+      <div class="skill-bar"><div style="width:75%"></div></div>
+    </div>
+    <div class="skill-card"><i class="fa-solid fa-bolt icon"></i>Support Operations
+      <div class="skill-bar"><div style="width:70%"></div></div>
+    </div>
+    <div class="skill-card"><i class="fa-solid fa-cloud icon"></i>Microsoft Azure / SQL
+      <div class="skill-bar"><div style="width:60%"></div></div>
+    </div>
+  </div>
 </div>
 
 <!-- LEARNING -->
 <div class="section" id="learning">
-<h2>Currently Learning</h2>
-<div class="skills-grid">
-<div class="skill-card">Microsoft Azure Fundamentals (AZ-900)</div>
-<div class="skill-card">Cloud infrastructure concepts</div>
-<div class="skill-card">Identity and access management in cloud</div>
-<div class="skill-card">SQL for data and systems support</div>
-</div>
+  <h2>Currently Learning</h2>
+  <div class="skills-grid">
+    <div class="skill-card">Microsoft Azure Fundamentals (AZ-900)</div>
+    <div class="skill-card">Cloud infrastructure concepts</div>
+    <div class="skill-card">Identity and access management in cloud</div>
+    <div class="skill-card">SQL for data and systems support</div>
+  </div>
 </div>
 
 <!-- PROJECTS -->
 <div class="section" id="projects">
-<h2>Projects / Labs</h2>
-<div class="skills-grid">
-<div class="project-card"><b>Azure App Service Deployment</b><br>Practice deploying websites on Azure</div>
-<div class="project-card"><b>Azure VM Setup</b><br>Creating and configuring Virtual Machines</div>
-<div class="project-card"><b>Storage Account Access</b><br>Setting up and managing Azure Storage</div>
-<div class="project-card"><b>Monitoring Resources</b><br>Using Azure portal to monitor resources</div>
-</div>
+  <h2>Projects / Labs</h2>
+  <div class="skills-grid">
+    <div class="project-card"><b>Azure App Service Deployment</b><br>Practice deploying websites on Azure</div>
+    <div class="project-card"><b>Azure VM Setup</b><br>Creating and configuring Virtual Machines</div>
+    <div class="project-card"><b>Storage Account Access</b><br>Setting up and managing Azure Storage</div>
+    <div class="project-card"><b>Monitoring Resources</b><br>Using Azure portal to monitor resources</div>
+  </div>
 </div>
 
 <!-- CONTACT -->
 <div class="section" id="contact">
-<h2>Contact</h2>
-<div class="card contact-icons">
-<a href="mailto:your-email"><i class="fa-solid fa-envelope"></i></a>
-<a href="https://www.linkedin.com/in/your-linkedin" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-<a href="https://github.com/ajayshukla-tech" target="_blank"><i class="fa-brands fa-github"></i></a>
-</div>
+  <h2>Contact</h2>
+  <div style="max-width:400px; margin:auto;">
+    <div class="contact-item"><i class="fa-solid fa-envelope"></i><span>abdude989@gmail.com</span></div>
+    <div class="contact-item"><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/ajay-shukla-b6939b268/" target="_blank">linkedin.com/in/ajay-shukla-b6939b268</a></div>
+    <div class="contact-item"><i class="fa-brands fa-github"></i><a href="https://github.com/ajayshukla-tech" target="_blank">github.com/ajayshukla-tech</a></div>
+  </div>
 </div>
 
 <script>
