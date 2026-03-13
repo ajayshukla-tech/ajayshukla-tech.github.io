@@ -6,132 +6,152 @@
 
 <style>
 body{
-font-family: Arial, sans-serif;
-margin:0;
-background:#0f172a;
-color:white;
-scroll-behavior:smooth;
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#0f172a;
+    color:white;
+    scroll-behavior:smooth;
 }
 
+/* ===== HERO SECTION ===== */
 header{
-background:#020617;
-padding:80px 20px;
-text-align:center;
+    background:#020617;
+    padding:100px 20px;
+    text-align:center;
+    position:relative;
 }
 
 header h1{
-margin:0;
-font-size:50px;
-color:#38bdf8;
+    margin:0;
+    font-size:60px;
+    color:#38bdf8;
 }
 
-header p{
-margin-top:10px;
-color:#94a3b8;
-font-size:18px;
+header .title{
+    margin-top:10px;
+    color:#94a3b8;
+    font-size:20px;
+}
+
+header .dynamic-text{
+    margin-top:15px;
+    color:#38bdf8;
+    font-size:18px;
+    font-weight:bold;
 }
 
 header button{
-margin-top:20px;
-background:#38bdf8;
-color:#0f172a;
-border:none;
-padding:12px 25px;
-font-size:16px;
-border-radius:6px;
-cursor:pointer;
+    margin-top:25px;
+    background:#38bdf8;
+    color:#0f172a;
+    border:none;
+    padding:14px 30px;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+    transition: transform 0.3s, background 0.3s;
 }
 
+header button:hover{
+    background:#0ea5e9;
+    transform: translateY(-3px);
+}
+
+/* ===== NAVIGATION ===== */
 nav{
-background:#1e293b;
-text-align:center;
-padding:12px;
-position:sticky;
-top:0;
-z-index:100;
+    background:#1e293b;
+    text-align:center;
+    padding:12px;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 nav a{
-color:white;
-margin:15px;
-text-decoration:none;
-font-weight:bold;
+    color:white;
+    margin:15px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
+/* ===== SECTIONS ===== */
 .section{
-padding:60px 20px;
-max-width:1000px;
-margin:auto;
+    padding:60px 20px;
+    max-width:1000px;
+    margin:auto;
 }
 
 h2{
-border-bottom:2px solid #38bdf8;
-padding-bottom:5px;
-margin-bottom:15px;
-}
-
-.timeline{
-position:relative;
-margin-left:20px;
-}
-
-.timeline div{
-position:relative;
-margin-bottom:30px;
-padding-left:40px;
-}
-
-.timeline div::before{
-content:"";
-position:absolute;
-left:0;
-top:0;
-width:15px;
-height:15px;
-background:#38bdf8;
-border-radius:50%;
-}
-
-.timeline p{
-margin:3px 0;
-color:#cbd5e1;
-}
-
-.skills-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+    border-bottom:2px solid #38bdf8;
+    padding-bottom:5px;
+    margin-bottom:15px;
 }
 
 .card{
-background:#1e293b;
-padding:25px;
-border-radius:10px;
-transition: transform 0.3s, box-shadow 0.3s;
+    background:#1e293b;
+    padding:25px;
+    border-radius:10px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover{
-transform: translateY(-5px);
-box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+
+/* ===== TIMELINE ===== */
+.timeline{
+    position:relative;
+    margin-left:20px;
+}
+
+.timeline div{
+    position:relative;
+    margin-bottom:30px;
+    padding-left:40px;
+}
+
+.timeline div::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:15px;
+    height:15px;
+    background:#38bdf8;
+    border-radius:50%;
+}
+
+.timeline p{
+    margin:3px 0;
+    color:#cbd5e1;
+}
+
+/* ===== SKILLS GRID ===== */
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
 }
 
 .icon{
-font-size:24px;
-margin-right:8px;
-vertical-align:middle;
+    font-size:24px;
+    margin-right:8px;
+    vertical-align:middle;
 }
 
+/* ===== PROJECT CARDS ===== */
 .project-card{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-transition: transform 0.3s, box-shadow 0.3s;
-cursor:pointer;
+    background:#1e293b;
+    padding:20px;
+    border-radius:10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor:pointer;
 }
 
 .project-card:hover{
-transform: translateY(-5px);
-box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
 }
 
 </style>
@@ -139,13 +159,15 @@ box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
 
 <body>
 
+<!-- HERO SECTION -->
 <header>
 <h1>Ajay Shukla</h1>
-<p>Software Engineer | Enterprise Application Support</p>
-<p>Learning Microsoft Azure & Cloud Technologies</p>
-<button onclick="window.open('resume.pdf')">Download Resume</button>
+<p class="title">Software Engineer | Enterprise Application Support</p>
+<p class="dynamic-text">Learning <span id="skill">Microsoft Azure</span> & Cloud Technologies</p>
+<button onclick="window.open('resume.pdf')">⬇️ Download Resume</button>
 </header>
 
+<!-- NAVIGATION -->
 <nav>
 <a href="#about">About</a>
 <a href="#experience">Experience</a>
@@ -155,6 +177,7 @@ box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
 <a href="#contact">Contact</a>
 </nav>
 
+<!-- ABOUT SECTION -->
 <div class="section" id="about">
 <h2>About Me</h2>
 <div class="card">
@@ -169,6 +192,7 @@ for platforms such as Alteryx and SharePoint Online.
 </div>
 </div>
 
+<!-- EXPERIENCE SECTION -->
 <div class="section" id="experience">
 <h2>Experience</h2>
 <div class="timeline">
@@ -181,6 +205,7 @@ for platforms such as Alteryx and SharePoint Online.
 </div>
 </div>
 
+<!-- SKILLS SECTION -->
 <div class="section" id="skills">
 <h2>Skills</h2>
 <div class="skills-grid">
@@ -191,6 +216,7 @@ for platforms such as Alteryx and SharePoint Online.
 </div>
 </div>
 
+<!-- LEARNING SECTION -->
 <div class="section" id="learning">
 <h2>Currently Learning</h2>
 <div class="card">
@@ -203,6 +229,7 @@ for platforms such as Alteryx and SharePoint Online.
 </div>
 </div>
 
+<!-- PROJECTS SECTION -->
 <div class="section" id="projects">
 <h2>Projects / Labs</h2>
 <div class="skills-grid">
@@ -221,14 +248,26 @@ for platforms such as Alteryx and SharePoint Online.
 </div>
 </div>
 
+<!-- CONTACT SECTION -->
 <div class="section" id="contact">
 <h2>Contact</h2>
 <div class="card">
-<p>Email: abdude989@gmail.com</p>
+<p>Email: your-email</p>
 <p>LinkedIn: your-linkedin</p>
 <p>GitHub: ajayshukla-tech</p>
 </div>
 </div>
+
+<!-- DYNAMIC SKILL SCRIPT -->
+<script>
+// Rotating skills
+const skills = ["Microsoft Azure", "Cloud Infrastructure", "SQL", "IAM", "Enterprise Tools"];
+let i = 0;
+setInterval(() => {
+    document.getElementById("skill").textContent = skills[i];
+    i = (i + 1) % skills.length;
+}, 2000);
+</script>
 
 </body>
 </html>
