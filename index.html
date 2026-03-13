@@ -114,18 +114,18 @@ h2{
 }
 
 /* ===== CARDS ===== */
-.card{
+.card, .project-card{
     background:#1e293b;
     padding:25px;
     border-radius:10px;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.4s; /* smooth background transition */
     cursor:pointer;
 }
 
-.card:hover{
+.card:hover, .project-card:hover{
     transform: translateY(-5px);
     box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
-    background:#334155; /* temporary background color on hover */
+    background:#334155; /* smooth temporary background color */
 }
 
 /* ===== TIMELINE ===== */
@@ -167,21 +167,6 @@ h2{
     font-size:24px;
     margin-right:8px;
     vertical-align:middle;
-}
-
-/* ===== PROJECT CARDS ===== */
-.project-card{
-    background:#1e293b;
-    padding:20px;
-    border-radius:10px;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-    cursor:pointer;
-}
-
-.project-card:hover{
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
-    background:#334155; /* hover background color */
 }
 </style>
 </head>
