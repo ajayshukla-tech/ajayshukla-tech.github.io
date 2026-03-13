@@ -58,8 +58,13 @@ h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
 
 /* ===== SKILLS & PROJECTS GRID ===== */
 .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
-.skill-card, .project-card { border:2px solid #38bdf8; border-radius:10px; padding:20px; background: rgba(30,41,59,0.2); transition: transform 0.3s, background 0.3s; cursor:pointer; display:flex; align-items:center; justify-content:center; font-weight:bold; gap:10px; } /* Added gap */
+.skill-card, .project-card { border:2px solid #38bdf8; border-radius:10px; padding:20px; background: rgba(30,41,59,0.2); transition: transform 0.3s, background 0.3s; cursor:pointer; display:flex; align-items:center; justify-content:center; font-weight:bold; gap:10px; } 
 .skill-card:hover, .project-card:hover { transform: translateY(-3px); background: rgba(56,189,248,0.2); }
+
+/* ===== PROJECT CARD SPECIFIC ===== */
+.project-card { flex-direction: column; align-items: flex-start; justify-content: flex-start; min-height: auto; padding:20px; }
+.project-card b { font-size:16px; margin-bottom:8px; display:block; } /* Title bold and above description */
+.project-card span { font-weight: normal; font-size:14px; color:#e2e8f0; } /* Description styling */
 
 /* ===== CONTACT ===== */
 .contact-item-wrapper {
@@ -155,10 +160,10 @@ h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
   <div class="section" id="projects">
     <h2>Projects / Labs</h2>
     <div class="skills-grid">
-      <div class="project-card"><b>Azure App Service Deployment</b><br>Practice deploying websites on Azure</div>
-      <div class="project-card"><b>Azure VM Setup</b><br>Creating and configuring Virtual Machines</div>
-      <div class="project-card"><b>Storage Account Access</b><br>Setting up and managing Azure Storage</div>
-      <div class="project-card"><b>Monitoring Resources</b><br>Using Azure portal to monitor resources</div>
+      <div class="project-card"><b>Azure App Service Deployment</b><span>Practice deploying websites on Azure</span></div>
+      <div class="project-card"><b>Azure VM Setup</b><span>Creating and configuring Virtual Machines</span></div>
+      <div class="project-card"><b>Storage Account Access</b><span>Setting up and managing Azure Storage</span></div>
+      <div class="project-card"><b>Monitoring Resources</b><span>Using Azure portal to monitor resources</span></div>
     </div>
   </div>
 
