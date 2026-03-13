@@ -8,12 +8,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <style>
+html {
+    scroll-behavior: smooth; /* smooth scrolling for anchor links */
+}
+
 body{
     font-family: Arial, sans-serif;
     margin:0;
     background:#0f172a;
     color:white;
-    scroll-behavior:smooth;
 }
 
 /* ===== HERO SECTION ===== */
@@ -118,14 +121,14 @@ h2{
     background:#1e293b;
     padding:25px;
     border-radius:10px;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.4s; /* smooth background transition */
+    transition: transform 0.3s, box-shadow 0.3s, background 0.4s;
     cursor:pointer;
 }
 
 .card:hover, .project-card:hover{
     transform: translateY(-5px);
     box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
-    background:#334155; /* smooth temporary background color */
+    background:#334155; /* temporary hover background color */
 }
 
 /* ===== TIMELINE ===== */
