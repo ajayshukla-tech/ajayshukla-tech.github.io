@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>Ajay Shukla | Portfolio</title>
+<title>Ajay Shukla | Cloud Portfolio</title>
 
 <style>
 
@@ -15,18 +15,24 @@ color:white;
 
 header{
 background:#020617;
-padding:25px;
+padding:60px 20px;
 text-align:center;
 }
 
 header h1{
 margin:0;
+font-size:40px;
+}
+
+header p{
+margin-top:10px;
+color:#94a3b8;
 }
 
 nav{
 background:#1e293b;
 text-align:center;
-padding:10px;
+padding:12px;
 }
 
 nav a{
@@ -37,8 +43,8 @@ font-weight:bold;
 }
 
 .section{
-padding:50px;
-max-width:900px;
+padding:60px 20px;
+max-width:1000px;
 margin:auto;
 }
 
@@ -52,6 +58,21 @@ border-radius:10px;
 h2{
 border-bottom:2px solid #38bdf8;
 padding-bottom:5px;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+button{
+background:#38bdf8;
+border:none;
+padding:12px 20px;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
 }
 
 </style>
@@ -68,19 +89,21 @@ padding-bottom:5px;
 
 <p>Learning Microsoft Azure & Cloud Technologies</p>
 
-</header>
+<br>
 
+<button>Download Resume</button>
+
+</header>
 
 <nav>
 
 <a href="#about">About</a>
 <a href="#experience">Experience</a>
 <a href="#skills">Skills</a>
-<a href="#certifications">Certifications</a>
+<a href="#learning">Learning</a>
 <a href="#contact">Contact</a>
 
 </nav>
-
 
 <div class="section" id="about">
 
@@ -93,10 +116,14 @@ IT professional with nearly three years of experience in enterprise application 
 Currently working as a Software Engineer at HCLTech supporting the Franklin Templeton environment.
 </p>
 
-</div>
+<p>
+My experience includes incident response, access provisioning, enterprise tool support, and operational support
+for platforms such as Alteryx and SharePoint Online.
+</p>
 
 </div>
 
+</div>
 
 <div class="section" id="experience">
 
@@ -108,7 +135,7 @@ Currently working as a Software Engineer at HCLTech supporting the Franklin Temp
 
 <ul>
 
-<li>Enterprise application support</li>
+<li>Enterprise application support for Franklin Templeton environment</li>
 
 <li>Identity & Access Management operations</li>
 
@@ -116,55 +143,65 @@ Currently working as a Software Engineer at HCLTech supporting the Franklin Temp
 
 <li>SharePoint Online administration</li>
 
-<li>Incident management and service requests</li>
+<li>Incident management and service request handling</li>
 
 </ul>
 
 </div>
 
 </div>
-
-
 
 <div class="section" id="skills">
 
 <h2>Skills</h2>
 
+<div class="skills-grid">
+
+<div class="card">
+<h3>Identity & Access</h3>
+<p>Access provisioning, de-provisioning, IAM operations</p>
+</div>
+
+<div class="card">
+<h3>Enterprise Tools</h3>
+<p>SharePoint Online, Alteryx, Routematic</p>
+</div>
+
+<div class="card">
+<h3>Support Operations</h3>
+<p>Incident management, service requests, troubleshooting</p>
+</div>
+
+<div class="card">
+<h3>Cloud & Database</h3>
+<p>Microsoft Azure (Learning), SQL</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="section" id="learning">
+
+<h2>Currently Learning</h2>
+
 <div class="card">
 
 <ul>
 
-<li>Identity & Access Management</li>
+<li>Microsoft Azure Fundamentals (AZ-900)</li>
 
-<li>SharePoint Online</li>
+<li>Cloud infrastructure concepts</li>
 
-<li>Alteryx</li>
+<li>Identity and access management in cloud</li>
 
-<li>SQL</li>
-
-<li>Microsoft Azure (Learning)</li>
+<li>SQL for data and systems support</li>
 
 </ul>
 
 </div>
 
 </div>
-
-
-
-<div class="section" id="certifications">
-
-<h2>Certifications</h2>
-
-<div class="card">
-
-<p>Preparing for Microsoft Azure Fundamentals (AZ-900)</p>
-
-</div>
-
-</div>
-
-
 
 <div class="section" id="contact">
 
@@ -176,10 +213,11 @@ Currently working as a Software Engineer at HCLTech supporting the Franklin Temp
 
 <p>LinkedIn: your-linkedin</p>
 
-</div>
+<p>GitHub: ajayshukla-tech</p>
 
 </div>
 
+</div>
 
 </body>
 </html>
