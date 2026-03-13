@@ -9,7 +9,7 @@
 
 <style>
 html {
-    scroll-behavior: smooth; /* smooth scrolling */
+    scroll-behavior: smooth;
 }
 
 body{
@@ -106,16 +106,13 @@ nav a{
     margin:15px;
     text-decoration:none;
     font-weight:bold;
-    transition: color 0.3s, transform 0.3s;
+    transition: color 0.3s, transform 0.2s; /* smooth hover for each link */
 }
 
+/* ===== HOVER EFFECT ONLY FOR THE LINK CURSOR IS ON ===== */
 nav a:hover{
-    color:#38bdf8;
-    transform: translateY(-2px);
-}
-
-nav a.active{
-    color:#0ea5e9; /* highlight active section */
+    color:#38bdf8; /* change color on hover */
+    transform: translateY(-4px); /* move up slightly */
 }
 
 /* ===== SECTIONS ===== */
