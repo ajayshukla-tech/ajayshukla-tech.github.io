@@ -236,19 +236,18 @@ window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 };
 
-// ===== Dynamic PDF Download (Clean Black Text) =====
+// ===== Dynamic PDF Download (Clean Black Text, including contact details) =====
 document.getElementById('download-btn').addEventListener('click', function() {
-    // Clone content and clean styles
     const element = document.getElementById('resume-content').cloneNode(true);
 
-    // Apply clean style for PDF
     const pdfStyle = `
         body { font-family: Arial, sans-serif; color: black; background: white; }
         h1,h2,h3,h4,h5,h6 { color: black; }
-        p,li,span { color: black; }
+        p,li,span,a { color: black; text-decoration:none; }
         .bordered-box { border: none; background: none; padding:0; margin-bottom: 15px; }
         .skills-grid, .contact-item-wrapper { display:block; }
         .skill-card, .project-card, .contact-item { border:none; background:none; padding:0; margin-bottom:10px; }
+        .contact-item i { display:none; }
     `;
     const pdfElement = document.createElement('div');
     pdfElement.appendChild(element);
