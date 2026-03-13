@@ -8,181 +8,88 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <style>
-html {
-    scroll-behavior: smooth;
-}
-
-body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    background:#0f172a;
-    color:white;
-}
+html { scroll-behavior: smooth; }
+body { font-family: Arial, sans-serif; margin:0; background:#0f172a; color:white; }
 
 /* ===== SCROLL PROGRESS BAR ===== */
-#progress-bar{
-    position:fixed;
-    top:0;
-    left:0;
-    height:4px;
-    background:#38bdf8;
-    width:0%;
-    z-index:9999;
+#progress-bar {
+    position:fixed; top:0; left:0; height:4px; background:#38bdf8; width:0%; z-index:9999;
 }
 
 /* ===== HERO SECTION ===== */
-.hero-bg{
-    position:absolute;
-    top:0; left:0;
-    width:100%; height:100%;
+.hero-bg {
+    position:absolute; top:0; left:0; width:100%; height:100%;
     background: linear-gradient(270deg, #0f172a, #1e293b, #0f172a);
-    background-size: 600% 600%;
-    z-index:-1;
-    animation: gradientBG 20s ease infinite;
+    background-size: 600% 600%; z-index:-1; animation: gradientBG 20s ease infinite;
 }
-
 @keyframes gradientBG {
     0% {background-position:0% 50%;}
     50% {background-position:100% 50%;}
     100% {background-position:0% 50%;}
 }
-
-header{
-    background:transparent;
-    padding:120px 20px;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
+header {
+    background:transparent; padding:120px 20px; text-align:center; position:relative; overflow:hidden;
 }
-
-header h1{
-    margin:0;
-    font-size:60px;
-    color:#38bdf8;
-}
-
-header .title{
-    margin-top:10px;
-    color:#94a3b8;
-    font-size:20px;
-}
-
-header .dynamic-text{
-    margin-top:15px;
-    color:#38bdf8;
-    font-size:18px;
-    font-weight:bold;
-}
-
-header button{
-    margin-top:25px;
-    background:#38bdf8;
-    color:#0f172a;
-    border:none;
-    padding:14px 30px;
-    font-size:16px;
-    border-radius:6px;
-    cursor:pointer;
+header h1 { margin:0; font-size:60px; color:#38bdf8; }
+header .title { margin-top:10px; color:#94a3b8; font-size:20px; }
+header .dynamic-text { margin-top:15px; color:#38bdf8; font-size:18px; font-weight:bold; }
+header button {
+    margin-top:25px; background:#38bdf8; color:#0f172a; border:none; padding:14px 30px; font-size:16px; border-radius:6px; cursor:pointer;
     transition: transform 0.3s, background 0.3s;
 }
-
-header button:hover{
-    background:#0ea5e9;
-    transform: translateY(-3px);
-}
+header button:hover { background:#0ea5e9; transform: translateY(-3px); }
 
 /* ===== NAVIGATION ===== */
-nav{
-    background:#1e293b;
-    text-align:center;
-    padding:12px;
-    position:sticky;
-    top:0;
-    z-index:100;
+nav {
+    background:#1e293b; text-align:center; padding:12px; position:sticky; top:0; z-index:100;
 }
-
-nav a{
-    color:white;
-    margin:15px;
-    text-decoration:none;
-    font-weight:bold;
-    transition: color 0.3s, transform 0.2s; /* smooth hover for each link */
+nav a {
+    color:white; margin:0 20px; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px;
+    transition: color 0.3s, background 0.3s, transform 0.2s;
 }
-
-/* ===== HOVER EFFECT ONLY FOR THE LINK CURSOR IS ON ===== */
-nav a:hover{
-    color:#38bdf8; /* change color on hover */
-    transform: translateY(-4px); /* move up slightly */
+nav a:hover {
+    color:#0ea5e9; background: rgba(56,189,248,0.1); transform: translateY(-3px);
 }
+nav a.active { color:#38bdf8; border-bottom:2px solid #38bdf8; }
 
 /* ===== SECTIONS ===== */
-.section{
-    padding:60px 20px;
-    max-width:1000px;
-    margin:auto;
-}
-
-h2{
-    border-bottom:2px solid #38bdf8;
-    padding-bottom:5px;
-    margin-bottom:15px;
-}
+.section { padding:60px 20px; max-width:1000px; margin:auto; }
+h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
 
 /* ===== CARDS ===== */
-.card, .project-card{
-    background:#1e293b;
-    padding:25px;
-    border-radius:10px;
+.card, .project-card {
+    background:#1e293b; padding:25px; border-radius:10px;
     transition: transform 0.3s, box-shadow 0.3s, background 0.4s;
     cursor:pointer;
 }
-
-.card:hover, .project-card:hover{
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
-    background:#334155;
+.card:hover, .project-card:hover {
+    transform: translateY(-5px); box-shadow: 0px 8px 20px rgba(0,0,0,0.3); background:#334155;
 }
 
 /* ===== TIMELINE ===== */
-.timeline{
-    position:relative;
-    margin-left:20px;
+.timeline { position:relative; margin-left:20px; }
+.timeline div { position:relative; margin-bottom:30px; padding-left:40px; transition: transform 0.3s, box-shadow 0.3s; }
+.timeline div:hover { transform: translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.3); }
+.timeline div::before {
+    content:""; position:absolute; left:0; top:0; width:15px; height:15px; background:#38bdf8; border-radius:50%;
 }
-
-.timeline div{
-    position:relative;
-    margin-bottom:30px;
-    padding-left:40px;
-}
-
-.timeline div::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    width:15px;
-    height:15px;
-    background:#38bdf8;
-    border-radius:50%;
-}
-
-.timeline p{
-    margin:3px 0;
-    color:#cbd5e1;
-}
+.timeline p { margin:3px 0; color:#cbd5e1; }
 
 /* ===== SKILLS GRID ===== */
-.skills-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-}
+.skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
+.icon { font-size:24px; margin-right:8px; vertical-align:middle; }
 
-.icon{
-    font-size:24px;
-    margin-right:8px;
-    vertical-align:middle;
+/* ===== SKILL BARS ===== */
+.skill-card { background:#1e293b; padding:20px; border-radius:8px; transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; }
+.skill-card:hover { transform: translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.3); background:#334155; }
+.skill-bar { height:6px; background:#334155; border-radius:3px; margin-top:8px; }
+.skill-bar div { height:100%; background:#38bdf8; border-radius:3px; }
+
+/* ===== CONTACT ICONS ===== */
+.contact-icons a {
+    margin:0 10px; color:white; font-size:22px; transition: color 0.3s, transform 0.2s;
 }
+.contact-icons a:hover { color:#38bdf8; transform: scale(1.2); }
 </style>
 </head>
 
@@ -210,115 +117,105 @@ h2{
 <a href="#contact">Contact</a>
 </nav>
 
-<!-- ABOUT SECTION -->
+<!-- ABOUT -->
 <div class="section" id="about">
 <h2>About Me</h2>
 <div class="card">
-<p>
-IT professional with nearly three years of experience in enterprise application support and access administration.
-Currently working as a Software Engineer at HCLTech supporting the Franklin Templeton environment.
-</p>
-<p>
-Experience includes incident response, access provisioning, enterprise tool support, and operational support
-for platforms such as Alteryx and SharePoint Online.
-</p>
+<p>IT professional with nearly three years of experience in enterprise application support and access administration. Currently working at HCLTech supporting Franklin Templeton.</p>
+<p>Passionate about Microsoft Azure & cloud technologies, focusing on identity & access management and enterprise application support.</p>
 </div>
 </div>
 
-<!-- EXPERIENCE SECTION -->
+<!-- EXPERIENCE -->
 <div class="section" id="experience">
 <h2>Experience</h2>
 <div class="timeline">
 <div>
 <h4>Software Engineer — HCLTech</h4>
 <p>Enterprise application support for Franklin Templeton environment</p>
-<p>Identity & Access Management, SharePoint administration, incident management, service requests</p>
+<ul>
+<li>Identity & Access Management (IAM)</li>
+<li>SharePoint administration & access governance</li>
+<li>Incident management & service requests</li>
+</ul>
 <p>2023 — Present</p>
 </div>
 </div>
 </div>
 
-<!-- SKILLS SECTION -->
+<!-- SKILLS -->
 <div class="section" id="skills">
 <h2>Skills</h2>
 <div class="skills-grid">
-<div class="card"><i class="fa-solid fa-user-lock icon"></i><b>Identity & Access</b><br>Access provisioning, de-provisioning, IAM operations</div>
-<div class="card"><i class="fa-solid fa-gear icon"></i><b>Enterprise Tools</b><br>SharePoint Online, Alteryx, Routematic</div>
-<div class="card"><i class="fa-solid fa-bolt icon"></i><b>Support Operations</b><br>Incident management, service requests, troubleshooting</div>
-<div class="card"><i class="fa-solid fa-cloud icon"></i><b>Cloud & Database</b><br>Microsoft Azure (Learning), SQL</div>
+<div class="skill-card"><i class="fa-solid fa-user-lock icon"></i>Identity & Access
+<div class="skill-bar"><div style="width:80%"></div></div>
+</div>
+<div class="skill-card"><i class="fa-solid fa-gear icon"></i>Enterprise Tools
+<div class="skill-bar"><div style="width:75%"></div></div>
+</div>
+<div class="skill-card"><i class="fa-solid fa-bolt icon"></i>Support Operations
+<div class="skill-bar"><div style="width:70%"></div></div>
+</div>
+<div class="skill-card"><i class="fa-solid fa-cloud icon"></i>Microsoft Azure / SQL
+<div class="skill-bar"><div style="width:60%"></div></div>
+</div>
 </div>
 </div>
 
-<!-- LEARNING SECTION -->
+<!-- LEARNING -->
 <div class="section" id="learning">
 <h2>Currently Learning</h2>
-<div class="card">
-<ul>
-<li>Microsoft Azure Fundamentals (AZ-900)</li>
-<li>Cloud infrastructure concepts</li>
-<li>Identity and access management in cloud</li>
-<li>SQL for data and systems support</li>
-</ul>
+<div class="skills-grid">
+<div class="skill-card">Microsoft Azure Fundamentals (AZ-900)</div>
+<div class="skill-card">Cloud infrastructure concepts</div>
+<div class="skill-card">Identity and access management in cloud</div>
+<div class="skill-card">SQL for data and systems support</div>
 </div>
 </div>
 
-<!-- PROJECTS SECTION -->
+<!-- PROJECTS -->
 <div class="section" id="projects">
 <h2>Projects / Labs</h2>
 <div class="skills-grid">
-<div class="project-card" onclick="window.open('#')">
-<b>Azure App Service Deployment</b><br>Practice deploying websites on Azure
-</div>
-<div class="project-card" onclick="window.open('#')">
-<b>Azure VM Setup</b><br>Creating and configuring Virtual Machines
-</div>
-<div class="project-card" onclick="window.open('#')">
-<b>Storage Account Access</b><br>Setting up and managing Azure Storage
-</div>
-<div class="project-card" onclick="window.open('#')">
-<b>Monitoring Resources</b><br>Using Azure portal to monitor resources
-</div>
+<div class="project-card"><b>Azure App Service Deployment</b><br>Practice deploying websites on Azure</div>
+<div class="project-card"><b>Azure VM Setup</b><br>Creating and configuring Virtual Machines</div>
+<div class="project-card"><b>Storage Account Access</b><br>Setting up and managing Azure Storage</div>
+<div class="project-card"><b>Monitoring Resources</b><br>Using Azure portal to monitor resources</div>
 </div>
 </div>
 
-<!-- CONTACT SECTION -->
+<!-- CONTACT -->
 <div class="section" id="contact">
 <h2>Contact</h2>
-<div class="card">
-<p>Email: your-email</p>
-<p>LinkedIn: your-linkedin</p>
-<p>GitHub: ajayshukla-tech</p>
+<div class="card contact-icons">
+<a href="mailto:your-email"><i class="fa-solid fa-envelope"></i></a>
+<a href="https://www.linkedin.com/in/your-linkedin" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+<a href="https://github.com/ajayshukla-tech" target="_blank"><i class="fa-brands fa-github"></i></a>
 </div>
 </div>
 
-<!-- DYNAMIC SKILL SCRIPT & NAV HIGHLIGHT -->
 <script>
-// Rotating skills
-const skills = ["Microsoft Azure", "Cloud Infrastructure", "SQL", "IAM", "Enterprise Tools"];
+// Rotating skills in hero
+const skills = ["Microsoft Azure","Cloud Infrastructure","SQL","IAM","Enterprise Tools"];
 let i = 0;
-setInterval(() => {
-    document.getElementById("skill").textContent = skills[i];
-    i = (i + 1) % skills.length;
-}, 2000);
+setInterval(() => { document.getElementById("skill").textContent = skills[i]; i=(i+1)%skills.length; }, 2000);
 
 // Highlight nav link on scroll
 const sections = document.querySelectorAll('.section');
 const navLinks = document.querySelectorAll('nav a');
-
 window.addEventListener('scroll', () => {
-    let scrollPos = window.scrollY + 150; // offset for header
+    let scrollPos = window.scrollY + 150;
     sections.forEach((section) => {
         if(scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight){
-            navLinks.forEach(a => a.classList.remove('active'));
+            navLinks.forEach(a=>a.classList.remove('active'));
             const activeLink = document.querySelector(`nav a[href="#${section.id}"]`);
             if(activeLink) activeLink.classList.add('active');
         }
     });
-
-    // Update scroll progress bar
+    // Scroll progress bar
     const scrollTop = window.scrollY;
     const docHeight = document.body.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
+    const scrollPercent = (scrollTop/docHeight)*100;
     document.getElementById('progress-bar').style.width = scrollPercent + "%";
 });
 </script>
