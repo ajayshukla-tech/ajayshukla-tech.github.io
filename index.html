@@ -96,7 +96,7 @@ h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
   <p class="title">Software Engineer | Enterprise Application Support</p>
   <p class="dynamic-text">Learning <span id="skill">Microsoft Azure</span> & Cloud Technologies</p>
   <!-- Download Resume as force download -->
-  <a href="resume.pdf" download class="download-btn">
+  <a href="resume.pdf" download="AjayShukla_Resume.pdf" class="download-btn">
     <i class="fa-solid fa-download"></i> Download Resume
   </a>
 </header>
@@ -224,6 +224,11 @@ window.addEventListener('scroll', () => {
     const scrollPercent = (scrollTop/docHeight)*100;
     document.getElementById('progress-bar').style.width = scrollPercent + "%";
 });
+
+// Scroll to top on page load
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
 </script>
 
 </body>
