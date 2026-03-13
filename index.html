@@ -1,38 +1,54 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>Ajay Shukla | Cloud Portfolio</title>
 
 <style>
-
 body{
-font-family: Arial;
+font-family: Arial, sans-serif;
 margin:0;
 background:#0f172a;
 color:white;
+scroll-behavior:smooth;
 }
 
 header{
 background:#020617;
-padding:60px 20px;
+padding:80px 20px;
 text-align:center;
 }
 
 header h1{
 margin:0;
-font-size:40px;
+font-size:50px;
+color:#38bdf8;
 }
 
 header p{
 margin-top:10px;
 color:#94a3b8;
+font-size:18px;
+}
+
+header button{
+margin-top:20px;
+background:#38bdf8;
+color:#0f172a;
+border:none;
+padding:12px 25px;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
 }
 
 nav{
 background:#1e293b;
 text-align:center;
 padding:12px;
+position:sticky;
+top:0;
+z-index:100;
 }
 
 nav a{
@@ -58,21 +74,29 @@ border-radius:10px;
 h2{
 border-bottom:2px solid #38bdf8;
 padding-bottom:5px;
+margin-bottom:15px;
+}
+
+.timeline{
+position:relative;
+margin-left:20px;
+}
+
+.timeline div{
+margin-bottom:20px;
+padding-left:20px;
+border-left:3px solid #38bdf8;
+}
+
+.timeline h4{
+margin:0;
+color:#38bdf8;
 }
 
 .skills-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
-}
-
-button{
-background:#38bdf8;
-border:none;
-padding:12px 20px;
-border-radius:6px;
-font-weight:bold;
-cursor:pointer;
 }
 
 </style>
@@ -82,141 +106,100 @@ cursor:pointer;
 <body>
 
 <header>
-
 <h1>Ajay Shukla</h1>
-
 <p>Software Engineer | Enterprise Application Support</p>
-
 <p>Learning Microsoft Azure & Cloud Technologies</p>
-
-<br>
-
-<button>Download Resume</button>
-
+<button onclick="window.open('resume.pdf')">Download Resume</button>
 </header>
 
 <nav>
-
 <a href="#about">About</a>
 <a href="#experience">Experience</a>
 <a href="#skills">Skills</a>
 <a href="#learning">Learning</a>
+<a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
-
 </nav>
 
 <div class="section" id="about">
-
 <h2>About Me</h2>
-
 <div class="card">
-
 <p>
 IT professional with nearly three years of experience in enterprise application support and access administration.
 Currently working as a Software Engineer at HCLTech supporting the Franklin Templeton environment.
 </p>
-
 <p>
 My experience includes incident response, access provisioning, enterprise tool support, and operational support
 for platforms such as Alteryx and SharePoint Online.
 </p>
-
 </div>
-
 </div>
 
 <div class="section" id="experience">
-
 <h2>Experience</h2>
-
-<div class="card">
-
-<h3>Software Engineer — HCLTech</h3>
-
-<ul>
-
-<li>Enterprise application support for Franklin Templeton environment</li>
-
-<li>Identity & Access Management operations</li>
-
-<li>Access provisioning and de-provisioning</li>
-
-<li>SharePoint Online administration</li>
-
-<li>Incident management and service request handling</li>
-
-</ul>
-
+<div class="timeline">
+<div>
+<h4>Software Engineer — HCLTech</h4>
+<p>Enterprise application support for Franklin Templeton environment</p>
+<p>Identity & Access Management operations, SharePoint administration, incident management, service requests</p>
+<p>2023 — Present</p>
 </div>
-
+</div>
 </div>
 
 <div class="section" id="skills">
-
 <h2>Skills</h2>
-
 <div class="skills-grid">
-
 <div class="card">
 <h3>Identity & Access</h3>
 <p>Access provisioning, de-provisioning, IAM operations</p>
 </div>
-
 <div class="card">
 <h3>Enterprise Tools</h3>
 <p>SharePoint Online, Alteryx, Routematic</p>
 </div>
-
 <div class="card">
 <h3>Support Operations</h3>
 <p>Incident management, service requests, troubleshooting</p>
 </div>
-
 <div class="card">
 <h3>Cloud & Database</h3>
 <p>Microsoft Azure (Learning), SQL</p>
 </div>
-
 </div>
-
 </div>
 
 <div class="section" id="learning">
-
 <h2>Currently Learning</h2>
-
 <div class="card">
-
 <ul>
-
 <li>Microsoft Azure Fundamentals (AZ-900)</li>
-
 <li>Cloud infrastructure concepts</li>
-
 <li>Identity and access management in cloud</li>
-
 <li>SQL for data and systems support</li>
-
 </ul>
-
+</div>
 </div>
 
+<div class="section" id="projects">
+<h2>Cloud Projects / Labs</h2>
+<div class="card">
+<ul>
+<li>Deploying a website on Azure App Service (Practice)</li>
+<li>Creating and configuring Azure Virtual Machines</li>
+<li>Setting up Storage Account and access control</li>
+<li>Monitoring resources using Azure portal</li>
+</ul>
+</div>
 </div>
 
 <div class="section" id="contact">
-
 <h2>Contact</h2>
-
 <div class="card">
-
 <p>Email: your-email</p>
-
 <p>LinkedIn: your-linkedin</p>
-
 <p>GitHub: ajayshukla-tech</p>
-
 </div>
-
 </div>
 
 </body>
