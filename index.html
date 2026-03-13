@@ -39,7 +39,6 @@ header .download-btn {
   border-radius:6px;
   cursor:pointer;
   transition: transform 0.3s, background 0.3s;
-  text-decoration: none; /* for <a> tag */
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -79,11 +78,10 @@ h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
 }
 .contact-item i { font-size:22px; color:#38bdf8; transition: transform 0.2s, color 0.3s; }
 .contact-item span { color:white; transition: color 0.3s; }
+.contact-item a { text-decoration:none; display:flex; align-items:center; gap:10px; width:100%; }
 .contact-item:hover { transform: translateY(-3px); background: rgba(56,189,248,0.2); }
 .contact-item:hover i { transform: scale(1.2); color:#0ea5e9; }
 .contact-item:hover span { color:#0ea5e9; }
-.contact-item a { text-decoration:none; display:flex; align-items:center; gap:10px; width:100%; }
-.contact-item a:hover { text-decoration:none; }
 </style>
 </head>
 
@@ -238,17 +236,33 @@ window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 };
 
-// ===== Dynamic PDF Download =====
+// ===== Dynamic PDF Download (Clean Black Text) =====
 document.getElementById('download-btn').addEventListener('click', function() {
-    var element = document.getElementById('resume-content');
-    var opt = {
+    // Clone content and clean styles
+    const element = document.getElementById('resume-content').cloneNode(true);
+
+    // Apply clean style for PDF
+    const pdfStyle = `
+        body { font-family: Arial, sans-serif; color: black; background: white; }
+        h1,h2,h3,h4,h5,h6 { color: black; }
+        p,li,span { color: black; }
+        .bordered-box { border: none; background: none; padding:0; margin-bottom: 15px; }
+        .skills-grid, .contact-item-wrapper { display:block; }
+        .skill-card, .project-card, .contact-item { border:none; background:none; padding:0; margin-bottom:10px; }
+    `;
+    const pdfElement = document.createElement('div');
+    pdfElement.appendChild(element);
+    const styleEl = document.createElement('style');
+    styleEl.innerHTML = pdfStyle;
+    pdfElement.prepend(styleEl);
+
+    html2pdf().from(pdfElement).set({
         margin:       0.5,
         filename:     'AjayShukla_Resume.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { scale: 2 },
         jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-    };
-    html2pdf().set(opt).from(element).save();
+    }).save();
 });
 </script>
 
