@@ -35,6 +35,9 @@ nav a.active { color:#38bdf8; border-bottom:2px solid #38bdf8; }
 .section { padding:60px 20px; max-width:1000px; margin:auto; }
 h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
 
+/* ===== BORDERED BOXES ===== */
+.bordered-box { border:2px solid #38bdf8; padding:25px 30px; border-radius:10px; margin-bottom:30px; background: rgba(30,41,59,0.2); }
+
 /* ===== SKILLS GRID ===== */
 .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
 .icon { font-size:24px; margin-right:8px; vertical-align:middle; }
@@ -82,20 +85,24 @@ h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
 <!-- ABOUT -->
 <div class="section" id="about">
   <h2>About Me</h2>
-  <p>IT professional with nearly three years of experience in enterprise application support and access administration. Currently working at HCLTech supporting Franklin Templeton.</p>
-  <p>Passionate about Microsoft Azure & cloud technologies, focusing on identity & access management and enterprise application support.</p>
+  <div class="bordered-box">
+    <p>IT professional with nearly three years of experience in enterprise application support and access administration. Currently working at HCLTech supporting Franklin Templeton.</p>
+    <p>Passionate about Microsoft Azure & cloud technologies, focusing on identity & access management and enterprise application support.</p>
+  </div>
 </div>
 
 <!-- EXPERIENCE -->
 <div class="section" id="experience">
   <h2>Experience</h2>
-  <p><b>Software Engineer — HCLTech</b> (2023 — Present)</p>
-  <ul>
-    <li>Enterprise application support for Franklin Templeton environment</li>
-    <li>Identity & Access Management (IAM)</li>
-    <li>SharePoint administration & access governance</li>
-    <li>Incident management & service requests</li>
-  </ul>
+  <div class="bordered-box">
+    <p><b>Software Engineer — HCLTech</b> (2023 — Present)</p>
+    <ul>
+      <li>Enterprise application support for Franklin Templeton environment</li>
+      <li>Identity & Access Management (IAM)</li>
+      <li>SharePoint administration & access governance</li>
+      <li>Incident management & service requests</li>
+    </ul>
+  </div>
 </div>
 
 <!-- SKILLS -->
