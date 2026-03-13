@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>Ajay Shukla | Portfolio</title>
 
@@ -7,24 +8,50 @@
 
 body{
 font-family: Arial;
-margin:40px;
-background:#f4f4f4;
+margin:0;
+background:#0f172a;
+color:white;
+}
+
+header{
+background:#020617;
+padding:25px;
+text-align:center;
+}
+
+header h1{
+margin:0;
+}
+
+nav{
+background:#1e293b;
+text-align:center;
+padding:10px;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
 }
 
 .section{
-background:white;
-padding:25px;
-margin-bottom:20px;
-border-radius:10px;
-box-shadow:0px 2px 8px rgba(0,0,0,0.1);
+padding:50px;
+max-width:900px;
+margin:auto;
 }
 
-h1{
-color:#222;
+.card{
+background:#1e293b;
+padding:25px;
+margin-top:20px;
+border-radius:10px;
 }
 
 h2{
-color:#444;
+border-bottom:2px solid #38bdf8;
+padding-bottom:5px;
 }
 
 </style>
@@ -33,62 +60,126 @@ color:#444;
 
 <body>
 
-<div class="section">
-<h1>Ajay Shukla</h1>
-<p><b>Software Engineer | Enterprise Application Support</b></p>
-<p>Learning Microsoft Azure & Cloud Technologies</p>
-</div>
+<header>
 
-<div class="section">
+<h1>Ajay Shukla</h1>
+
+<p>Software Engineer | Enterprise Application Support</p>
+
+<p>Learning Microsoft Azure & Cloud Technologies</p>
+
+</header>
+
+
+<nav>
+
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#skills">Skills</a>
+<a href="#certifications">Certifications</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+
+<div class="section" id="about">
+
 <h2>About Me</h2>
+
+<div class="card">
+
 <p>
 IT professional with nearly three years of experience in enterprise application support and access administration.
 Currently working as a Software Engineer at HCLTech supporting the Franklin Templeton environment.
 </p>
+
 </div>
 
-<div class="section">
+</div>
+
+
+<div class="section" id="experience">
+
 <h2>Experience</h2>
 
-<p><b>Software Engineer — HCLTech</b></p>
+<div class="card">
+
+<h3>Software Engineer — HCLTech</h3>
 
 <ul>
+
 <li>Enterprise application support</li>
+
 <li>Identity & Access Management operations</li>
-<li>Access provisioning & de-provisioning</li>
+
+<li>Access provisioning and de-provisioning</li>
+
 <li>SharePoint Online administration</li>
+
 <li>Incident management and service requests</li>
+
 </ul>
 
 </div>
 
-<div class="section">
+</div>
+
+
+
+<div class="section" id="skills">
+
 <h2>Skills</h2>
 
+<div class="card">
+
 <ul>
+
 <li>Identity & Access Management</li>
+
 <li>SharePoint Online</li>
+
 <li>Alteryx</li>
+
 <li>SQL</li>
+
 <li>Microsoft Azure (Learning)</li>
+
 </ul>
 
 </div>
 
-<div class="section">
+</div>
+
+
+
+<div class="section" id="certifications">
+
 <h2>Certifications</h2>
+
+<div class="card">
 
 <p>Preparing for Microsoft Azure Fundamentals (AZ-900)</p>
 
 </div>
 
-<div class="section">
+</div>
+
+
+
+<div class="section" id="contact">
+
 <h2>Contact</h2>
 
+<div class="card">
+
 <p>Email: your-email</p>
+
 <p>LinkedIn: your-linkedin</p>
 
 </div>
+
+</div>
+
 
 </body>
 </html>
