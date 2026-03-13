@@ -36,6 +36,10 @@ header .download-btn {
   border-radius:6px;
   cursor:pointer;
   transition: transform 0.3s, background 0.3s;
+  text-decoration: none; /* for <a> tag */
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 header .download-btn:hover { background:#0ea5e9; transform: translateY(-3px); }
 
@@ -91,7 +95,10 @@ h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
   <h1>Ajay Shukla</h1>
   <p class="title">Software Engineer | Enterprise Application Support</p>
   <p class="dynamic-text">Learning <span id="skill">Microsoft Azure</span> & Cloud Technologies</p>
-  <button class="download-btn" onclick="window.open('resume.pdf')"><i class="fa-solid fa-download"></i> Download Resume</button>
+  <!-- Download Resume as force download -->
+  <a href="resume.pdf" download class="download-btn">
+    <i class="fa-solid fa-download"></i> Download Resume
+  </a>
 </header>
 
 <!-- NAVIGATION -->
