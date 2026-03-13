@@ -9,7 +9,7 @@
 
 <style>
 html {
-    scroll-behavior: smooth; /* smooth scrolling for anchor links */
+    scroll-behavior: smooth; /* smooth scrolling */
 }
 
 body{
@@ -17,6 +17,17 @@ body{
     margin:0;
     background:#0f172a;
     color:white;
+}
+
+/* ===== SCROLL PROGRESS BAR ===== */
+#progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    height:4px;
+    background:#38bdf8;
+    width:0%;
+    z-index:9999;
 }
 
 /* ===== HERO SECTION ===== */
@@ -103,6 +114,10 @@ nav a:hover{
     transform: translateY(-2px);
 }
 
+nav a.active{
+    color:#0ea5e9; /* highlight active section */
+}
+
 /* ===== SECTIONS ===== */
 .section{
     padding:60px 20px;
@@ -128,7 +143,7 @@ h2{
 .card:hover, .project-card:hover{
     transform: translateY(-5px);
     box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
-    background:#334155; /* temporary hover background color */
+    background:#334155;
 }
 
 /* ===== TIMELINE ===== */
@@ -175,6 +190,9 @@ h2{
 </head>
 
 <body>
+
+<!-- SCROLL PROGRESS BAR -->
+<div id="progress-bar"></div>
 
 <!-- HERO SECTION -->
 <header>
@@ -276,7 +294,7 @@ for platforms such as Alteryx and SharePoint Online.
 </div>
 </div>
 
-<!-- DYNAMIC SKILL SCRIPT -->
+<!-- DYNAMIC SKILL SCRIPT & NAV HIGHLIGHT -->
 <script>
 // Rotating skills
 const skills = ["Microsoft Azure", "Cloud Infrastructure", "SQL", "IAM", "Enterprise Tools"];
@@ -285,6 +303,27 @@ setInterval(() => {
     document.getElementById("skill").textContent = skills[i];
     i = (i + 1) % skills.length;
 }, 2000);
+
+// Highlight nav link on scroll
+const sections = document.querySelectorAll('.section');
+const navLinks = document.querySelectorAll('nav a');
+
+window.addEventListener('scroll', () => {
+    let scrollPos = window.scrollY + 150; // offset for header
+    sections.forEach((section) => {
+        if(scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight){
+            navLinks.forEach(a => a.classList.remove('active'));
+            const activeLink = document.querySelector(`nav a[href="#${section.id}"]`);
+            if(activeLink) activeLink.classList.add('active');
+        }
+    });
+
+    // Update scroll progress bar
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    document.getElementById('progress-bar').style.width = scrollPercent + "%";
+});
 </script>
 
 </body>
