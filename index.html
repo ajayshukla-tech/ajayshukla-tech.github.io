@@ -47,10 +47,24 @@ h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
 .skill-bar div { height:100%; background:#38bdf8; border-radius:3px; }
 
 /* ===== CONTACT ===== */
-.contact-item { display:flex; align-items:center; gap:15px; margin-bottom:15px; }
-.contact-item i { font-size:22px; color:#38bdf8; transition: color 0.3s, transform 0.2s; }
-.contact-item a { color:white; text-decoration:none; }
-.contact-item:hover i { transform:scale(1.2); color:#0ea5e9; }
+.contact-item-wrapper {
+  display:flex; flex-direction:column; gap:10px; margin-top:20px;
+}
+.contact-item {
+  display:flex; align-items:center; gap:15px; padding:12px 15px; border-radius:8px;
+  transition: transform 0.2s, background 0.3s;
+  background: rgba(30,41,59,0.2);
+  cursor:pointer;
+}
+.contact-item i { font-size:22px; color:#38bdf8; transition: transform 0.2s, color 0.3s; }
+.contact-item span { color:white; transition: color 0.3s; }
+.contact-item:hover { transform: translateY(-3px); background: rgba(56,189,248,0.2); }
+.contact-item:hover i { transform: scale(1.2); color:#0ea5e9; }
+.contact-item:hover span { color:#0ea5e9; }
+.contact-item a { text-decoration:none; display:flex; align-items:center; gap:10px; width:100%; }
+
+/* Optional: cursor pointer on the whole item */
+.contact-item a:hover { text-decoration:none; }
 </style>
 </head>
 
@@ -142,13 +156,28 @@ h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
   </div>
 </div>
 
-<!-- CONTACT -->
+<!-- CONTACT SECTION UPDATED -->
 <div class="section" id="contact">
   <h2>Contact</h2>
-  <div>
-    <div class="contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:abdude989@gmail.com">abdude989@gmail.com</a></div>
-    <div class="contact-item"><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/ajay-shukla-b6939b268/" target="_blank">linkedin.com/in/ajay-shukla-b6939b268</a></div>
-    <div class="contact-item"><i class="fa-brands fa-github"></i><a href="https://github.com/ajayshukla-tech" target="_blank">github.com/ajayshukla-tech</a></div>
+  <div class="contact-item-wrapper">
+    <div class="contact-item">
+      <a href="mailto:abdude989@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+        <span>abdude989@gmail.com</span>
+      </a>
+    </div>
+    <div class="contact-item">
+      <a href="https://www.linkedin.com/in/ajay-shukla-b6939b268/" target="_blank">
+        <i class="fa-brands fa-linkedin"></i>
+        <span>linkedin.com/in/ajay-shukla-b6939b268</span>
+      </a>
+    </div>
+    <div class="contact-item">
+      <a href="https://github.com/ajayshukla-tech" target="_blank">
+        <i class="fa-brands fa-github"></i>
+        <span>github.com/ajayshukla-tech</span>
+      </a>
+    </div>
   </div>
 </div>
 
