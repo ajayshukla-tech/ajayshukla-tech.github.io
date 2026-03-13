@@ -69,6 +69,12 @@ background:#1e293b;
 padding:25px;
 margin-top:20px;
 border-radius:10px;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover{
+transform: translateY(-5px);
+box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
 }
 
 h2{
@@ -99,6 +105,10 @@ grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 }
 
+.icon{
+font-size:24px;
+margin-right:8px;
+}
 </style>
 
 </head>
@@ -141,7 +151,7 @@ for platforms such as Alteryx and SharePoint Online.
 <div>
 <h4>Software Engineer — HCLTech</h4>
 <p>Enterprise application support for Franklin Templeton environment</p>
-<p>Identity & Access Management operations, SharePoint administration, incident management, service requests</p>
+<p>Identity & Access Management, SharePoint administration, incident management, service requests</p>
 <p>2023 — Present</p>
 </div>
 </div>
@@ -150,22 +160,10 @@ for platforms such as Alteryx and SharePoint Online.
 <div class="section" id="skills">
 <h2>Skills</h2>
 <div class="skills-grid">
-<div class="card">
-<h3>Identity & Access</h3>
-<p>Access provisioning, de-provisioning, IAM operations</p>
-</div>
-<div class="card">
-<h3>Enterprise Tools</h3>
-<p>SharePoint Online, Alteryx, Routematic</p>
-</div>
-<div class="card">
-<h3>Support Operations</h3>
-<p>Incident management, service requests, troubleshooting</p>
-</div>
-<div class="card">
-<h3>Cloud & Database</h3>
-<p>Microsoft Azure (Learning), SQL</p>
-</div>
+<div class="card"><span class="icon">🔑</span><b>Identity & Access</b><br>Access provisioning, de-provisioning, IAM operations</div>
+<div class="card"><span class="icon">🛠️</span><b>Enterprise Tools</b><br>SharePoint Online, Alteryx, Routematic</div>
+<div class="card"><span class="icon">⚡</span><b>Support Operations</b><br>Incident management, service requests, troubleshooting</div>
+<div class="card"><span class="icon">☁️</span><b>Cloud & Database</b><br>Microsoft Azure (Learning), SQL</div>
 </div>
 </div>
 
