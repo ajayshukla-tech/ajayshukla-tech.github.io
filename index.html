@@ -36,19 +36,15 @@ nav a.active { color:#38bdf8; border-bottom:2px solid #38bdf8; }
 h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
 
 /* ===== BORDERED BOXES ===== */
-.bordered-box { border:2px solid #38bdf8; padding:25px 30px; border-radius:10px; margin-bottom:30px; background: rgba(30,41,59,0.2); }
+.bordered-box { border:2px solid #38bdf8; padding:25px 30px; border-radius:10px; margin-bottom:30px; background: rgba(30,41,59,0.2); transition: transform 0.3s, background 0.3s; }
+.bordered-box:hover { transform: translateY(-3px); background: rgba(56,189,248,0.2); }
 
-/* ===== SKILLS GRID ===== */
+/* ===== SKILLS & PROJECTS GRID ===== */
 .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
-.icon { font-size:24px; margin-right:8px; vertical-align:middle; }
-.skill-card { background:#1e293b; padding:20px; border-radius:8px; transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; }
-.skill-card:hover { transform: translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.3); background:#334155; }
+.skill-card, .project-card { border:2px solid #38bdf8; border-radius:10px; padding:20px; background: rgba(30,41,59,0.2); transition: transform 0.3s, background 0.3s; cursor:pointer; }
+.skill-card:hover, .project-card:hover { transform: translateY(-3px); background: rgba(56,189,248,0.2); }
 .skill-bar { height:6px; background:#334155; border-radius:3px; margin-top:8px; }
 .skill-bar div { height:100%; background:#38bdf8; border-radius:3px; }
-
-/* ===== PROJECT CARDS ===== */
-.project-card { background:#1e293b; padding:25px; border-radius:10px; transition: transform 0.3s, box-shadow 0.3s, background 0.4s; cursor:pointer; }
-.project-card:hover { transform: translateY(-5px); box-shadow: 0px 8px 20px rgba(0,0,0,0.3); background:#334155; }
 
 /* ===== CONTACT ===== */
 .contact-item { display:flex; align-items:center; gap:15px; margin-bottom:15px; }
@@ -109,16 +105,16 @@ h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
 <div class="section" id="skills">
   <h2>Skills</h2>
   <div class="skills-grid">
-    <div class="skill-card"><i class="fa-solid fa-user-lock icon"></i>Identity & Access
+    <div class="skill-card"><i class="fa-solid fa-user-lock"></i> Identity & Access
       <div class="skill-bar"><div style="width:80%"></div></div>
     </div>
-    <div class="skill-card"><i class="fa-solid fa-gear icon"></i>Enterprise Tools
+    <div class="skill-card"><i class="fa-solid fa-gear"></i> Enterprise Tools
       <div class="skill-bar"><div style="width:75%"></div></div>
     </div>
-    <div class="skill-card"><i class="fa-solid fa-bolt icon"></i>Support Operations
+    <div class="skill-card"><i class="fa-solid fa-bolt"></i> Support Operations
       <div class="skill-bar"><div style="width:70%"></div></div>
     </div>
-    <div class="skill-card"><i class="fa-solid fa-cloud icon"></i>Microsoft Azure / SQL
+    <div class="skill-card"><i class="fa-solid fa-cloud"></i> Microsoft Azure / SQL
       <div class="skill-bar"><div style="width:60%"></div></div>
     </div>
   </div>
@@ -150,7 +146,7 @@ h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
 <div class="section" id="contact">
   <h2>Contact</h2>
   <div>
-    <div class="contact-item"><i class="fa-solid fa-envelope"></i><span>abdude989@gmail.com</span></div>
+    <div class="contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:abdude989@gmail.com">abdude989@gmail.com</a></div>
     <div class="contact-item"><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/ajay-shukla-b6939b268/" target="_blank">linkedin.com/in/ajay-shukla-b6939b268</a></div>
     <div class="contact-item"><i class="fa-brands fa-github"></i><a href="https://github.com/ajayshukla-tech" target="_blank">github.com/ajayshukla-tech</a></div>
   </div>
