@@ -496,14 +496,17 @@ jsPDF:{unit:'in',format:'letter',orientation:'portrait'}
 }).save();
 });
 
-/* copy to clipboard functionality */
+/* copy to clipboard functionality with check mark */
 document.querySelectorAll('.copy-icon').forEach(icon => {
 icon.addEventListener('click', (e) => {
 e.stopPropagation();
 const textToCopy = icon.getAttribute('data-copy');
 navigator.clipboard.writeText(textToCopy).then(() => {
-icon.style.color = "#10b981";
-setTimeout(() => { icon.style.color = "#38bdf8"; }, 1000);
+const originalIconClass = icon.className;
+icon.className = 'fa-solid fa-check copy-icon'; // change to check
+setTimeout(() => {
+icon.className = originalIconClass; // revert back
+}, 2000);
 });
 });
 });
