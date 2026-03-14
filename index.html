@@ -28,6 +28,18 @@ background:#0f172a;
 color:white;
 }
 
+/* PROGRESS BAR */
+
+#progressBar{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+background:#38bdf8;
+width:0%;
+z-index:200;
+}
+
 /* HERO BACKGROUND */
 
 .hero-bg{
@@ -109,7 +121,7 @@ background:#0ea5e9;
 transform:translateY(-3px);
 }
 
-/* NAV */
+/* NAVIGATION */
 
 nav{
 background:#1e293b;
@@ -319,6 +331,8 @@ font-size:14px;
 
 <body>
 
+<div id="progressBar"></div>
+
 <header>
 
 <div class="hero-bg"></div>
@@ -462,6 +476,8 @@ Microsoft Azure Fundamentals (AZ-900) — In Progress
 
 <script>
 
+/* rotating hero skill */
+
 const skills=["Microsoft Azure","Cloud Infrastructure","SQL","IAM","Enterprise Tools"];
 let i=0;
 
@@ -469,6 +485,8 @@ setInterval(()=>{
 document.getElementById("skill").textContent=skills[i];
 i=(i+1)%skills.length;
 },2000);
+
+/* section animation */
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
@@ -482,9 +500,47 @@ document.querySelectorAll(".section").forEach(section=>{
 observer.observe(section);
 });
 
+/* scroll progress bar */
+
+window.onscroll=function(){
+
+let winScroll=document.body.scrollTop || document.documentElement.scrollTop;
+
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+
+let scrolled=(winScroll/height)*100;
+
+document.getElementById("progressBar").style.width=scrolled+"%";
+
+};
+
+/* nav active section */
+
+const sections=document.querySelectorAll('.section');
+const navLinks=document.querySelectorAll('nav a');
+
+window.addEventListener('scroll',()=>{
+let scrollPos=window.scrollY+150;
+
+sections.forEach((section)=>{
+if(scrollPos>=section.offsetTop && scrollPos<section.offsetTop+section.offsetHeight){
+
+navLinks.forEach(a=>a.classList.remove('active'));
+
+const activeLink=document.querySelector(`nav a[href="#${section.id}"]`);
+if(activeLink) activeLink.classList.add('active');
+
+}
+});
+});
+
+/* top button */
+
 document.getElementById("topBtn").onclick=function(){
 window.scrollTo({top:0,behavior:'smooth'});
 };
+
+/* resume download */
 
 document.getElementById('download-btn').addEventListener('click', function() {
 
