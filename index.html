@@ -1,248 +1,526 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ajay Shukla | Cloud Portfolio</title>
 
-<!-- Font Awesome for icons -->
+<meta name="description" content="Ajay Shukla - Software Engineer specializing in Enterprise Application Support and Microsoft Azure cloud technologies.">
+<meta name="keywords" content="Ajay Shukla, Azure, Cloud, IAM, Software Engineer, Portfolio">
+<meta name="author" content="Ajay Shukla">
+
+<link rel="icon" href="favicon.png">
+
+<!-- Font Awesome -->
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-<!-- html2pdf.js library for dynamic PDF generation -->
+<!-- html2pdf -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
-html { scroll-behavior: smooth; }
-body { font-family: Arial, sans-serif; margin:0; background:#0f172a; color:white; }
 
-/* ===== HERO SECTION ===== */
-.hero-bg { position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(270deg, #0f172a, #1e293b, #0f172a); background-size: 600% 600%; z-index:-1; animation: gradientBG 20s ease infinite; }
-@keyframes gradientBG { 0% {background-position:0% 50%;} 50% {background-position:100% 50%;} 100% {background-position:0% 50%;} }
+html { scroll-behavior:smooth; }
 
-header { background:transparent; padding:120px 20px; text-align:center; position:relative; overflow:hidden; }
-header h1 { margin:0; font-size:60px; color:#38bdf8; }
-header .title { margin-top:10px; color:#94a3b8; font-size:20px; }
-header .dynamic-text { margin-top:15px; color:#38bdf8; font-size:18px; font-weight:bold; }
-
-/* Download Resume top-right */
-header .download-btn {
-  position:absolute;
-  top:20px;
-  right:20px;
-  background:#38bdf8;
-  color:#0f172a;
-  border:none;
-  padding:12px 22px;
-  font-size:14px;
-  border-radius:6px;
-  cursor:pointer;
-  transition: transform 0.3s, background 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#0f172a;
+color:white;
 }
-header .download-btn:hover { background:#0ea5e9; transform: translateY(-3px); }
 
-/* ===== NAVIGATION ===== */
-nav { background:#1e293b; text-align:center; padding:12px; position:sticky; top:0; z-index:100; }
-nav a { color:white; margin:0 20px; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:4px; transition: color 0.3s, background 0.3s, transform 0.2s; }
-nav a:hover { color:#0ea5e9; background: rgba(56,189,248,0.1); transform: translateY(-3px); }
-nav a.active { color:#38bdf8; border-bottom:2px solid #38bdf8; }
+/* HERO BACKGROUND */
 
-/* ===== SECTIONS ===== */
-.section { padding:60px 20px; max-width:1000px; margin:auto; }
-h2 { border-bottom:2px solid #38bdf8; padding-bottom:5px; margin-bottom:25px; }
-
-/* ===== BORDERED BOXES ===== */
-.bordered-box { border:2px solid #38bdf8; padding:25px 30px; border-radius:10px; margin-bottom:30px; background: rgba(30,41,59,0.2); transition: transform 0.3s, background 0.3s; }
-.bordered-box:hover { transform: translateY(-3px); background: rgba(56,189,248,0.2); }
-
-/* ===== SKILLS & PROJECTS GRID ===== */
-.skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
-.skill-card, .project-card { border:2px solid #38bdf8; border-radius:10px; padding:20px; background: rgba(30,41,59,0.2); transition: transform 0.3s, background 0.3s; cursor:pointer; display:flex; align-items:center; justify-content:center; font-weight:bold; gap:10px; } 
-.skill-card:hover, .project-card:hover { transform: translateY(-3px); background: rgba(56,189,248,0.2); }
-
-/* ===== PROJECT CARD SPECIFIC ===== */
-.project-card { flex-direction: column; align-items: flex-start; justify-content: flex-start; min-height: auto; padding:20px; }
-.project-card b { font-size:16px; margin-bottom:8px; display:block; } /* Title bold and above description */
-.project-card span { font-weight: normal; font-size:14px; color:#e2e8f0; } /* Description styling */
-
-/* ===== CONTACT ===== */
-.contact-item-wrapper {
-  display:flex; flex-direction:column; gap:10px; margin-top:20px;
+.hero-bg{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(270deg,#0f172a,#1e293b,#0f172a);
+background-size:600% 600%;
+animation:gradientBG 20s ease infinite;
+z-index:-1;
 }
-.contact-item {
-  display:flex; align-items:center; gap:15px; padding:12px 15px; border-radius:8px;
-  transition: transform 0.2s, background 0.3s;
-  background: rgba(30,41,59,0.2);
-  cursor:pointer;
+
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
-.contact-item i { font-size:22px; color:#38bdf8; transition: transform 0.2s, color 0.3s; }
-.contact-item span { color:white; transition: color 0.3s; }
-.contact-item a { text-decoration:none; display:flex; align-items:center; gap:10px; width:100%; }
-.contact-item:hover { transform: translateY(-3px); background: rgba(56,189,248,0.2); }
-.contact-item:hover i { transform: scale(1.2); color:#0ea5e9; }
-.contact-item:hover span { color:#0ea5e9; }
+
+/* HEADER */
+
+header{
+background:transparent;
+padding:120px 20px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.profile-photo{
+width:120px;
+height:120px;
+border-radius:50%;
+border:3px solid #38bdf8;
+margin-bottom:20px;
+}
+
+header h1{
+margin:0;
+font-size:60px;
+color:#38bdf8;
+}
+
+header .title{
+margin-top:10px;
+color:#94a3b8;
+font-size:20px;
+}
+
+header .dynamic-text{
+margin-top:15px;
+color:#38bdf8;
+font-size:18px;
+font-weight:bold;
+}
+
+/* DOWNLOAD BUTTON */
+
+header .download-btn{
+position:absolute;
+top:20px;
+right:20px;
+background:#38bdf8;
+color:#0f172a;
+border:none;
+padding:12px 22px;
+font-size:14px;
+border-radius:6px;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+header .download-btn:hover{
+background:#0ea5e9;
+transform:translateY(-3px);
+}
+
+/* NAV */
+
+nav{
+background:#1e293b;
+text-align:center;
+padding:12px;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav a{
+color:white;
+margin:0 20px;
+text-decoration:none;
+font-weight:600;
+padding:8px 12px;
+border-radius:4px;
+}
+
+nav a:hover{
+color:#0ea5e9;
+background:rgba(56,189,248,0.1);
+}
+
+nav a.active{
+color:#38bdf8;
+border-bottom:2px solid #38bdf8;
+}
+
+/* SECTION */
+
+.section{
+padding:60px 20px;
+max-width:1000px;
+margin:auto;
+opacity:0;
+transform:translateY(20px);
+transition:0.6s;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+h2{
+border-bottom:2px solid #38bdf8;
+padding-bottom:5px;
+margin-bottom:25px;
+}
+
+/* BOX */
+
+.bordered-box{
+border:2px solid #38bdf8;
+padding:25px 30px;
+border-radius:10px;
+margin-bottom:30px;
+background:rgba(30,41,59,0.2);
+}
+
+.bordered-box:hover{
+transform:translateY(-3px);
+background:rgba(56,189,248,0.2);
+}
+
+/* GRID */
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+/* CARDS */
+
+.skill-card,
+.project-card{
+border:2px solid #38bdf8;
+border-radius:10px;
+padding:20px;
+background:rgba(30,41,59,0.2);
+transition:0.3s;
+}
+
+.skill-card{
+display:flex;
+align-items:center;
+gap:12px;
+font-weight:bold;
+}
+
+.project-card{
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+}
+
+.skill-card:hover,
+.project-card:hover{
+background:rgba(56,189,248,0.2);
+transform:translateY(-3px);
+}
+
+/* PROJECT */
+
+.project-card b{
+font-size:16px;
+margin-bottom:8px;
+}
+
+.project-card span{
+font-size:14px;
+color:#e2e8f0;
+}
+
+.project-link{
+margin-top:10px;
+color:#38bdf8;
+text-decoration:none;
+font-size:14px;
+}
+
+.project-link:hover{
+text-decoration:underline;
+}
+
+/* CONTACT */
+
+.contact-item-wrapper{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:20px;
+}
+
+.contact-item{
+display:flex;
+align-items:center;
+gap:15px;
+padding:12px;
+border-radius:8px;
+background:rgba(30,41,59,0.2);
+}
+
+.contact-item i{
+font-size:22px;
+color:#38bdf8;
+}
+
+.contact-item:hover{
+background:rgba(56,189,248,0.2);
+transform:translateY(-3px);
+}
+
+.contact-item a{
+display:flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+color:white;
+width:100%;
+}
+
+/* BACK TO TOP */
+
+#topBtn{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#38bdf8;
+border:none;
+padding:12px 15px;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#020617;
+color:#94a3b8;
+font-size:14px;
+}
+
 </style>
+
 </head>
 
 <body>
 
-<!-- HERO SECTION -->
 <header>
-  <div class="hero-bg"></div>
-  <h1>Ajay Shukla</h1>
-  <p class="title">Software Engineer | Enterprise Application Support</p>
-  <p class="dynamic-text">Learning <span id="skill">Microsoft Azure</span> & Cloud Technologies</p>
-  <button id="download-btn" class="download-btn">
-    <i class="fa-solid fa-download"></i> Download Resume
-  </button>
+
+<div class="hero-bg"></div>
+
+<img src="profile.jpg" class="profile-photo">
+
+<h1>Ajay Shukla</h1>
+
+<p class="title">Software Engineer | Enterprise Application Support</p>
+
+<p class="dynamic-text">
+Learning <span id="skill">Microsoft Azure</span> & Cloud Technologies
+</p>
+
+<button id="download-btn" class="download-btn">
+<i class="fa-solid fa-download"></i> Download Resume
+</button>
+
 </header>
 
-<!-- NAVIGATION -->
 <nav>
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#skills">Skills</a>
-  <a href="#learning">Learning</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#skills">Skills</a>
+<a href="#certifications">Certifications</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<!-- CONTAINER FOR PDF -->
 <div id="resume-content">
 
-  <!-- ABOUT -->
-  <div class="section" id="about">
-    <h2>About Me</h2>
-    <div class="bordered-box">
-      <p>IT professional with nearly three years of experience in enterprise application support and access administration. Currently working at HCLTech supporting Franklin Templeton.</p>
-      <p>Passionate about Microsoft Azure & cloud technologies, focusing on identity & access management and enterprise application support.</p>
-    </div>
-  </div>
+<div class="section" id="about">
 
-  <!-- EXPERIENCE -->
-  <div class="section" id="experience">
-    <h2>Experience</h2>
-    <div class="bordered-box">
-      <p><b>Software Engineer — HCLTech</b> (2023 — Present)</p>
-      <ul>
-        <li>Enterprise application support for Franklin Templeton environment</li>
-        <li>Identity & Access Management (IAM)</li>
-        <li>SharePoint administration & access governance</li>
-        <li>Incident management & service requests</li>
-      </ul>
-    </div>
-  </div>
+<h2>About Me</h2>
 
-  <!-- SKILLS -->
-  <div class="section" id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card"><i class="fa-solid fa-user-lock"></i> Identity & Access</div>
-      <div class="skill-card"><i class="fa-solid fa-gear"></i> Enterprise Tools</div>
-      <div class="skill-card"><i class="fa-solid fa-bolt"></i> Support Operations</div>
-      <div class="skill-card"><i class="fa-solid fa-cloud"></i> Microsoft Azure / SQL</div>
-    </div>
-  </div>
+<div class="bordered-box">
 
-  <!-- LEARNING -->
-  <div class="section" id="learning">
-    <h2>Currently Learning</h2>
-    <div class="skills-grid">
-      <div class="skill-card">Microsoft Azure Fundamentals (AZ-900)</div>
-      <div class="skill-card">Cloud infrastructure concepts</div>
-      <div class="skill-card">Identity and access management in cloud</div>
-      <div class="skill-card">SQL for data and systems support</div>
-    </div>
-  </div>
+<p>IT professional with nearly three years of experience in enterprise application support and access administration. Currently working at HCLTech supporting Franklin Templeton.</p>
 
-  <!-- PROJECTS -->
-  <div class="section" id="projects">
-    <h2>Projects / Labs</h2>
-    <div class="skills-grid">
-      <div class="project-card"><b>Azure App Service Deployment</b><span>Practice deploying websites on Azure</span></div>
-      <div class="project-card"><b>Azure VM Setup</b><span>Creating and configuring Virtual Machines</span></div>
-      <div class="project-card"><b>Storage Account Access</b><span>Setting up and managing Azure Storage</span></div>
-      <div class="project-card"><b>Monitoring Resources</b><span>Using Azure portal to monitor resources</span></div>
-    </div>
-  </div>
+<p>Passionate about Microsoft Azure & cloud technologies, focusing on identity & access management and enterprise application support.</p>
 
-  <!-- CONTACT -->
-  <div class="section" id="contact">
-    <h2>Contact</h2>
-    <div class="contact-item-wrapper">
-      <div class="contact-item">
-        <a href="mailto:abdude989@gmail.com">
-          <i class="fa-solid fa-envelope"></i>
-          <span>abdude989@gmail.com</span>
-        </a>
-      </div>
-      <div class="contact-item">
-        <a href="https://www.linkedin.com/in/ajay-shukla-b6939b268/" target="_blank">
-          <i class="fa-brands fa-linkedin"></i>
-          <span>linkedin.com/in/ajay-shukla-b6939b268</span>
-        </a>
-      </div>
-      <div class="contact-item">
-        <a href="https://github.com/ajayshukla-tech" target="_blank">
-          <i class="fa-brands fa-github"></i>
-          <span>github.com/ajayshukla-tech</span>
-        </a>
-      </div>
-    </div>
-  </div>
+</div>
 
-</div> <!-- end of resume-content -->
+</div>
+
+<div class="section" id="experience">
+
+<h2>Experience</h2>
+
+<div class="bordered-box">
+
+<p><b>Software Engineer — HCLTech</b> (2023 — Present)</p>
+
+<ul>
+<li>Enterprise application support for Franklin Templeton environment</li>
+<li>Identity & Access Management (IAM)</li>
+<li>SharePoint administration & access governance</li>
+<li>Incident management & service requests</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="section" id="skills">
+
+<h2>Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card"><i class="fa-solid fa-cloud"></i> Microsoft Azure</div>
+
+<div class="skill-card"><i class="fa-solid fa-user-lock"></i> Identity & Access Management</div>
+
+<div class="skill-card"><i class="fa-solid fa-database"></i> SQL</div>
+
+<div class="skill-card"><i class="fa-solid fa-server"></i> Enterprise Application Support</div>
+
+<div class="skill-card"><i class="fa-solid fa-folder"></i> SharePoint Administration</div>
+
+<div class="skill-card"><i class="fa-solid fa-triangle-exclamation"></i> Incident Management</div>
+
+</div>
+
+</div>
+
+<div class="section" id="certifications">
+
+<h2>Certifications</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+Microsoft Azure Fundamentals (AZ-900) — In Progress
+</div>
+
+</div>
+
+</div>
+
+<div class="section" id="projects">
+
+<h2>Projects / Labs</h2>
+
+<div class="skills-grid">
+
+<div class="project-card">
+<b>Azure App Service Deployment</b>
+<span>Practice deploying websites on Azure</span>
+<a href="https://github.com/ajayshukla-tech" class="project-link" target="_blank">View Project</a>
+</div>
+
+<div class="project-card">
+<b>Azure VM Setup</b>
+<span>Creating and configuring Virtual Machines</span>
+<a href="https://github.com/ajayshukla-tech" class="project-link" target="_blank">View Project</a>
+</div>
+
+<div class="project-card">
+<b>Azure Storage Setup</b>
+<span>Creating and managing Azure Storage accounts</span>
+<a href="https://github.com/ajayshukla-tech" class="project-link" target="_blank">View Project</a>
+</div>
+
+<div class="project-card">
+<b>Azure Monitoring</b>
+<span>Monitoring resources using Azure portal</span>
+<a href="https://github.com/ajayshukla-tech" class="project-link" target="_blank">View Project</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="section" id="contact">
+
+<h2>Contact</h2>
+
+<div class="contact-item-wrapper">
+
+<div class="contact-item">
+<a href="mailto:abdude989@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+<span>abdude989@gmail.com</span>
+</a>
+</div>
+
+<div class="contact-item">
+<a href="https://www.linkedin.com/in/ajay-shukla-b6939b268/" target="_blank">
+<i class="fa-brands fa-linkedin"></i>
+<span>linkedin.com/in/ajay-shukla-b6939b268</span>
+</a>
+</div>
+
+<div class="contact-item">
+<a href="https://github.com/ajayshukla-tech" target="_blank">
+<i class="fa-brands fa-github"></i>
+<span>github.com/ajayshukla-tech</span>
+</a>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<button id="topBtn">↑</button>
+
+<footer>
+
+© 2026 Ajay Shukla | Cloud Portfolio
+
+</footer>
 
 <script>
-// Rotating skills in hero
-const skills = ["Microsoft Azure","Cloud Infrastructure","SQL","IAM","Enterprise Tools"];
-let i = 0;
-setInterval(() => { document.getElementById("skill").textContent = skills[i]; i=(i+1)%skills.length; }, 2000);
 
-// Highlight nav link on scroll
-const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('nav a');
-window.addEventListener('scroll', () => {
-    let scrollPos = window.scrollY + 150;
-    sections.forEach((section) => {
-        if(scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight){
-            navLinks.forEach(a=>a.classList.remove('active'));
-            const activeLink = document.querySelector(`nav a[href="#${section.id}"]`);
-            if(activeLink) activeLink.classList.add('active');
-        }
-    });
+const skills=["Microsoft Azure","Cloud Infrastructure","SQL","IAM","Enterprise Tools"];
+
+let i=0;
+
+setInterval(()=>{
+document.getElementById("skill").textContent=skills[i];
+i=(i+1)%skills.length;
+},2000);
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
 });
 
-// Scroll to top on page load
-window.onbeforeunload = function () { window.scrollTo(0, 0); };
+document.querySelectorAll(".section").forEach(section=>{
+observer.observe(section);
+});
 
-// ===== Dynamic PDF Download =====
+document.getElementById("topBtn").onclick=function(){
+window.scrollTo({top:0,behavior:'smooth'});
+};
+
 document.getElementById('download-btn').addEventListener('click', function() {
-    const element = document.getElementById('resume-content').cloneNode(true);
-    const pdfStyle = `
-        body { font-family: Arial, sans-serif; color: black; background: white; }
-        h1,h2,h3,h4,h5,h6 { color: black; }
-        p,li,span,a { color: black; text-decoration:none; }
-        .bordered-box { border: none; background: none; padding:0; margin-bottom: 15px; }
-        .skills-grid, .contact-item-wrapper { display:block; }
-        .skill-card, .project-card, .contact-item { border:none; background:none; padding:0; margin-bottom:10px; }
-        .contact-item i { display:none; }
-    `;
-    const pdfElement = document.createElement('div');
-    pdfElement.appendChild(element);
-    const styleEl = document.createElement('style');
-    styleEl.innerHTML = pdfStyle;
-    pdfElement.prepend(styleEl);
 
-    html2pdf().from(pdfElement).set({
-        margin:       0.5,
-        filename:     'AjayShukla_Resume.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-    }).save();
+const element=document.getElementById('resume-content').cloneNode(true);
+
+html2pdf().from(element).set({
+margin:0.5,
+filename:'AjayShukla_Resume.pdf',
+html2canvas:{scale:2},
+jsPDF:{unit:'in',format:'letter',orientation:'portrait'}
+}).save();
+
 });
+
 </script>
 
 </body>
