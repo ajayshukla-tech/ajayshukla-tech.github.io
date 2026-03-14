@@ -306,16 +306,23 @@ color:white;
 width:100%;
 }
 
+/* COPY ICON */
+
 .copy-icon{
+opacity:0;
+font-size:18px;
 color:#94a3b8;
 cursor:pointer;
-font-size:18px;
-margin-left:10px;
-transition:color 0.3s;
+transition:opacity 0.3s,color 0.3s;
+}
+
+.contact-item:hover .copy-icon{
+opacity:1;
 }
 
 .copy-icon.copied{
 color:#22c55e;
+opacity:1;
 }
 
 /* BACK TO TOP */
@@ -380,7 +387,7 @@ Learning <span id="skill">Microsoft Azure</span> & Cloud Technologies
 
 <div id="resume-content">
 
-<!-- (ALL YOUR SECTIONS REMAIN EXACTLY SAME ABOVE CONTACT) -->
+<!-- ALL YOUR SECTIONS ABOVE CONTACT REMAIN SAME -->
 
 <div class="section" id="contact">
 <h2>Contact</h2>
@@ -429,6 +436,7 @@ Learning <span id="skill">Microsoft Azure</span> & Cloud Technologies
 function copyText(id,icon){
 const text=document.getElementById(id).innerText;
 navigator.clipboard.writeText(text);
+
 icon.classList.remove("fa-clone");
 icon.classList.add("fa-check","copied");
 
