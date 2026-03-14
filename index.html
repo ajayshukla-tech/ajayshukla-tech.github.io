@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -12,15 +11,11 @@
 <meta name="author" content="Ajay Shukla">
 
 <link rel="icon" href="favicon.png">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
-
 html{scroll-behavior:smooth;}
-
 body{
 font-family:Arial, sans-serif;
 margin:0;
@@ -29,7 +24,6 @@ color:white;
 }
 
 /* PROGRESS BAR */
-
 #progressBar{
 position:fixed;
 top:0;
@@ -41,7 +35,6 @@ z-index:200;
 }
 
 /* HERO BACKGROUND */
-
 .hero-bg{
 position:absolute;
 top:0;
@@ -53,7 +46,6 @@ background-size:600% 600%;
 animation:gradientBG 20s ease infinite;
 z-index:-1;
 }
-
 @keyframes gradientBG{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
@@ -61,7 +53,6 @@ z-index:-1;
 }
 
 /* HEADER */
-
 header{
 background:transparent;
 padding:120px 20px;
@@ -69,7 +60,6 @@ text-align:center;
 position:relative;
 overflow:hidden;
 }
-
 .profile-photo{
 width:120px;
 height:120px;
@@ -77,19 +67,16 @@ border-radius:50%;
 border:3px solid #38bdf8;
 margin-bottom:20px;
 }
-
 header h1{
 margin:0;
 font-size:60px;
 color:#38bdf8;
 }
-
 header .title{
 margin-top:10px;
 color:#94a3b8;
 font-size:20px;
 }
-
 header .dynamic-text{
 margin-top:15px;
 color:#38bdf8;
@@ -98,7 +85,6 @@ font-weight:bold;
 }
 
 /* DOWNLOAD BUTTON */
-
 header .download-btn{
 position:absolute;
 top:20px;
@@ -115,27 +101,23 @@ align-items:center;
 gap:6px;
 transition:transform 0.3s, background 0.3s;
 }
-
 header .download-btn:hover{
 background:#0ea5e9;
 transform:translateY(-3px);
 }
 
 /* NAVIGATION */
-
 nav{
 background:#1e293b;
 padding:12px;
 position:sticky;
 top:0;
 z-index:100;
-
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
 gap:10px;
 }
-
 nav a{
 color:white;
 text-decoration:none;
@@ -144,20 +126,17 @@ padding:8px 12px;
 border-radius:4px;
 transition:color 0.3s, background 0.3s, transform 0.2s;
 }
-
 nav a:hover{
 color:#0ea5e9;
 background:rgba(56,189,248,0.1);
 transform:translateY(-3px);
 }
-
 nav a.active{
 color:#38bdf8;
 border-bottom:2px solid #38bdf8;
 }
 
 /* SECTION */
-
 .section{
 padding:60px 20px;
 max-width:1000px;
@@ -166,12 +145,10 @@ opacity:0;
 transform:translateY(20px);
 transition:0.6s;
 }
-
 .section.show{
 opacity:1;
 transform:translateY(0);
 }
-
 h2{
 border-bottom:2px solid #38bdf8;
 padding-bottom:5px;
@@ -179,7 +156,6 @@ margin-bottom:25px;
 }
 
 /* BOX */
-
 .bordered-box{
 border:2px solid #38bdf8;
 padding:25px 30px;
@@ -188,14 +164,12 @@ margin-bottom:30px;
 background:rgba(30,41,59,0.2);
 transition:transform 0.3s, background 0.3s;
 }
-
 .bordered-box:hover{
 transform:translateY(-3px);
 background:rgba(56,189,248,0.2);
 }
 
 /* GRID */
-
 .skills-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -203,7 +177,6 @@ gap:20px;
 }
 
 /* SKILL CARD */
-
 .skill-card{
 border:2px solid #38bdf8;
 border-radius:10px;
@@ -215,14 +188,12 @@ gap:12px;
 font-weight:bold;
 transition:transform 0.3s, background 0.3s;
 }
-
 .skill-card:hover{
 background:rgba(56,189,248,0.2);
 transform:translateY(-3px);
 }
 
 /* PROJECT CARD */
-
 .project-card{
 border:2px solid #38bdf8;
 border-radius:10px;
@@ -233,70 +204,60 @@ flex-direction:column;
 align-items:flex-start;
 transition:transform 0.3s, background 0.3s;
 }
-
 .project-card:hover{
 background:rgba(56,189,248,0.2);
 transform:translateY(-3px);
 }
-
 .project-card b{
 font-size:16px;
 margin-bottom:8px;
 }
-
 .project-card span{
 font-size:14px;
 color:#e2e8f0;
 }
-
 .project-link{
 margin-top:10px;
 color:#38bdf8;
 text-decoration:none;
 font-size:14px;
 }
-
 .project-link:hover{
 text-decoration:underline;
 }
 
 /* CONTACT */
-
 .contact-item-wrapper{
 display:flex;
 flex-direction:column;
 gap:12px;
 margin-top:20px;
 }
-
 .contact-item{
 display:flex;
 align-items:center;
-justify-content:space-between;
 gap:15px;
 padding:12px;
 border-radius:8px;
 background:rgba(30,41,59,0.2);
 cursor:pointer;
 transition:transform 0.3s, background 0.3s;
+position:relative;
+justify-content:space-between;
 }
-
 .contact-item:hover{
 background:rgba(56,189,248,0.2);
 transform:translateY(-3px);
 }
-
 .contact-item i{
 font-size:22px;
 color:#38bdf8;
 transition:transform 0.3s, color 0.3s;
 }
-
 .contact-item:hover i{
 transform:scale(1.2);
 color:#0ea5e9;
 }
-
 .contact-item a{
 display:flex;
 align-items:center;
@@ -304,29 +265,16 @@ gap:10px;
 text-decoration:none;
 color:white;
 width:100%;
+transition:transform 0.3s;
 }
-
-/* COPY ICON */
-
 .copy-icon{
-opacity:0;
 font-size:18px;
-color:#94a3b8;
+color:#38bdf8;
 cursor:pointer;
-transition:opacity 0.3s,color 0.3s;
-}
-
-.contact-item:hover .copy-icon{
-opacity:1;
-}
-
-.copy-icon.copied{
-color:#22c55e;
-opacity:1;
+transition:transform 0.3s, color 0.3s;
 }
 
 /* BACK TO TOP */
-
 #topBtn{
 position:fixed;
 bottom:25px;
@@ -339,7 +287,6 @@ cursor:pointer;
 }
 
 /* FOOTER */
-
 footer{
 text-align:center;
 padding:20px;
@@ -347,33 +294,24 @@ background:#020617;
 color:#94a3b8;
 font-size:14px;
 }
-
 </style>
 
 </head>
-
 <body>
 
 <div id="progressBar"></div>
 
 <header>
-
 <div class="hero-bg"></div>
-
 <img src="profile.jpg" class="profile-photo">
-
 <h1>Ajay Shukla</h1>
-
 <p class="title">Software Engineer | Enterprise Application Support</p>
-
 <p class="dynamic-text">
 Learning <span id="skill">Microsoft Azure</span> & Cloud Technologies
 </p>
-
 <button id="download-btn" class="download-btn">
 <i class="fa-solid fa-download"></i> Download Resume
 </button>
-
 </header>
 
 <nav>
@@ -387,35 +325,105 @@ Learning <span id="skill">Microsoft Azure</span> & Cloud Technologies
 
 <div id="resume-content">
 
-<!-- ALL YOUR SECTIONS ABOVE CONTACT REMAIN SAME -->
+<div class="section" id="about">
+<h2>About Me</h2>
+<div class="bordered-box">
+<p>IT professional with nearly three years of experience in enterprise application support and access administration. Currently working at HCLTech supporting Franklin Templeton.</p>
+<p>Passionate about Microsoft Azure & cloud technologies, focusing on identity & access management and enterprise application support.</p>
+</div>
+</div>
+
+<div class="section" id="experience">
+<h2>Experience</h2>
+<div class="bordered-box">
+<p><b>Software Engineer — HCLTech</b> (2023 — Present)</p>
+<ul>
+<li>Enterprise application support for Franklin Templeton environment</li>
+<li>Identity & Access Management (IAM)</li>
+<li>SharePoint administration & access governance</li>
+<li>Incident management & service requests</li>
+</ul>
+</div>
+</div>
+
+<div class="section" id="skills">
+<h2>Skills</h2>
+<div class="skills-grid">
+<div class="skill-card"><i class="fa-solid fa-cloud"></i> Microsoft Azure</div>
+<div class="skill-card"><i class="fa-solid fa-user-lock"></i> Identity & Access Management</div>
+<div class="skill-card"><i class="fa-solid fa-database"></i> SQL</div>
+<div class="skill-card"><i class="fa-solid fa-server"></i> Enterprise Application Support</div>
+<div class="skill-card"><i class="fa-solid fa-folder"></i> SharePoint Administration</div>
+<div class="skill-card"><i class="fa-solid fa-triangle-exclamation"></i> Incident Management</div>
+</div>
+</div>
+
+<div class="section" id="certifications">
+<h2>Certifications</h2>
+<div class="skills-grid">
+<div class="skill-card">
+Microsoft Azure Fundamentals (AZ-900) — In Progress
+</div>
+</div>
+</div>
+
+<div class="section" id="projects">
+<h2>Projects / Labs</h2>
+<div class="skills-grid">
+
+<div class="project-card">
+<b>Azure App Service Deployment</b>
+<span>Practice deploying websites on Azure</span>
+<a href="https://github.com/ajayshukla-tech" class="project-link" target="_blank">View Project</a>
+</div>
+
+<div class="project-card">
+<b>Azure VM Setup</b>
+<span>Creating and configuring Virtual Machines</span>
+<a href="https://github.com/ajayshukla-tech" class="project-link" target="_blank">View Project</a>
+</div>
+
+<div class="project-card">
+<b>Azure Storage Setup</b>
+<span>Creating and managing Azure Storage accounts</span>
+<a href="https://github.com/ajayshukla-tech" class="project-link" target="_blank">View Project</a>
+</div>
+
+<div class="project-card">
+<b>Azure Monitoring</b>
+<span>Monitoring resources using Azure portal</span>
+<a href="https://github.com/ajayshukla-tech" class="project-link" target="_blank">View Project</a>
+</div>
+
+</div>
+</div>
 
 <div class="section" id="contact">
 <h2>Contact</h2>
-
 <div class="contact-item-wrapper">
 
 <div class="contact-item">
 <a href="mailto:abdude989@gmail.com">
 <i class="fa-solid fa-envelope"></i>
-<span id="emailText">abdude989@gmail.com</span>
+<span>abdude989@gmail.com</span>
 </a>
-<i class="fa-regular fa-clone copy-icon" onclick="copyText('emailText',this)"></i>
+<i class="fa-solid fa-copy copy-icon" data-copy="abdude989@gmail.com" title="Copy"></i>
 </div>
 
 <div class="contact-item">
 <a href="https://www.linkedin.com/in/ajay-shukla-b6939b268/" target="_blank">
 <i class="fa-brands fa-linkedin"></i>
-<span id="linkedinText">linkedin.com/in/ajay-shukla-b6939b268</span>
+<span>linkedin.com/in/ajay-shukla-b6939b268</span>
 </a>
-<i class="fa-regular fa-clone copy-icon" onclick="copyText('linkedinText',this)"></i>
+<i class="fa-solid fa-copy copy-icon" data-copy="linkedin.com/in/ajay-shukla-b6939b268" title="Copy"></i>
 </div>
 
 <div class="contact-item">
 <a href="https://github.com/ajayshukla-tech" target="_blank">
 <i class="fa-brands fa-github"></i>
-<span id="githubText">github.com/ajayshukla-tech</span>
+<span>github.com/ajayshukla-tech</span>
 </a>
-<i class="fa-regular fa-clone copy-icon" onclick="copyText('githubText',this)"></i>
+<i class="fa-solid fa-copy copy-icon" data-copy="github.com/ajayshukla-tech" title="Copy"></i>
 </div>
 
 </div>
@@ -430,22 +438,75 @@ Learning <span id="skill">Microsoft Azure</span> & Cloud Technologies
 </footer>
 
 <script>
-
-/* COPY FUNCTION */
-
-function copyText(id,icon){
-const text=document.getElementById(id).innerText;
-navigator.clipboard.writeText(text);
-
-icon.classList.remove("fa-clone");
-icon.classList.add("fa-check","copied");
-
-setTimeout(()=>{
-icon.classList.remove("fa-check","copied");
-icon.classList.add("fa-clone");
+/* rotating hero skill */
+const skills=["Microsoft Azure","Cloud Infrastructure","SQL","IAM","Enterprise Tools"];
+let i=0;
+setInterval(()=>{
+document.getElementById("skill").textContent=skills[i];
+i=(i+1)%skills.length;
 },2000);
-}
 
+/* section animation */
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+document.querySelectorAll(".section").forEach(section=>{
+observer.observe(section);
+});
+
+/* scroll progress bar */
+window.onscroll=function(){
+let winScroll=document.body.scrollTop || document.documentElement.scrollTop;
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+let scrolled=(winScroll/height)*100;
+document.getElementById("progressBar").style.width=scrolled+"%";
+};
+
+/* nav active section */
+const sections=document.querySelectorAll('.section');
+const navLinks=document.querySelectorAll('nav a');
+window.addEventListener('scroll',()=>{
+let scrollPos=window.scrollY+150;
+sections.forEach((section)=>{
+if(scrollPos>=section.offsetTop && scrollPos<section.offsetTop+section.offsetHeight){
+navLinks.forEach(a=>a.classList.remove('active'));
+const activeLink=document.querySelector(`nav a[href="#${section.id}"]`);
+if(activeLink) activeLink.classList.add('active');
+}
+});
+});
+
+/* top button */
+document.getElementById("topBtn").onclick=function(){
+window.scrollTo({top:0,behavior:'smooth'});
+};
+
+/* resume download */
+document.getElementById('download-btn').addEventListener('click', function() {
+const element=document.getElementById('resume-content').cloneNode(true);
+html2pdf().from(element).set({
+margin:0.5,
+filename:'AjayShukla_Resume.pdf',
+html2canvas:{scale:2},
+jsPDF:{unit:'in',format:'letter',orientation:'portrait'}
+}).save();
+});
+
+/* copy to clipboard functionality */
+document.querySelectorAll('.copy-icon').forEach(icon => {
+icon.addEventListener('click', (e) => {
+e.stopPropagation();
+const textToCopy = icon.getAttribute('data-copy');
+navigator.clipboard.writeText(textToCopy).then(() => {
+icon.style.color = "#10b981";
+setTimeout(() => { icon.style.color = "#38bdf8"; }, 1000);
+});
+});
+});
 </script>
 
 </body>
