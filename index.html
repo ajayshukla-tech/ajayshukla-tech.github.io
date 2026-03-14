@@ -19,7 +19,7 @@
 
 <style>
 
-html { scroll-behavior:smooth; }
+html{scroll-behavior:smooth;}
 
 body{
 font-family:Arial, sans-serif;
@@ -113,7 +113,7 @@ cursor:pointer;
 display:flex;
 align-items:center;
 gap:6px;
-transition: transform 0.3s, background 0.3s;
+transition:transform 0.3s, background 0.3s;
 }
 
 header .download-btn:hover{
@@ -125,21 +125,24 @@ transform:translateY(-3px);
 
 nav{
 background:#1e293b;
-text-align:center;
 padding:12px;
 position:sticky;
 top:0;
 z-index:100;
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
 }
 
 nav a{
 color:white;
-margin:0 20px;
 text-decoration:none;
 font-weight:600;
 padding:8px 12px;
 border-radius:4px;
-transition: color 0.3s, background 0.3s, transform 0.2s;
+transition:color 0.3s, background 0.3s, transform 0.2s;
 }
 
 nav a:hover{
@@ -183,7 +186,7 @@ padding:25px 30px;
 border-radius:10px;
 margin-bottom:30px;
 background:rgba(30,41,59,0.2);
-transition: transform 0.3s, background 0.3s;
+transition:transform 0.3s, background 0.3s;
 }
 
 .bordered-box:hover{
@@ -210,7 +213,7 @@ display:flex;
 align-items:center;
 gap:12px;
 font-weight:bold;
-transition: transform 0.3s, background 0.3s;
+transition:transform 0.3s, background 0.3s;
 }
 
 .skill-card:hover{
@@ -228,7 +231,7 @@ background:rgba(30,41,59,0.2);
 display:flex;
 flex-direction:column;
 align-items:flex-start;
-transition: transform 0.3s, background 0.3s;
+transition:transform 0.3s, background 0.3s;
 }
 
 .project-card:hover{
@@ -274,7 +277,7 @@ padding:12px;
 border-radius:8px;
 background:rgba(30,41,59,0.2);
 cursor:pointer;
-transition: transform 0.3s, background 0.3s;
+transition:transform 0.3s, background 0.3s;
 }
 
 .contact-item:hover{
@@ -285,7 +288,7 @@ transform:translateY(-3px);
 .contact-item i{
 font-size:22px;
 color:#38bdf8;
-transition: transform 0.3s, color 0.3s;
+transition:transform 0.3s, color 0.3s;
 }
 
 .contact-item:hover i{
@@ -408,6 +411,7 @@ Microsoft Azure Fundamentals (AZ-900) — In Progress
 
 <div class="section" id="projects">
 <h2>Projects / Labs</h2>
+
 <div class="skills-grid">
 
 <div class="project-card">
