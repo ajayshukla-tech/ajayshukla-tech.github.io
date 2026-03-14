@@ -438,6 +438,11 @@ Microsoft Azure Fundamentals (AZ-900) — In Progress
 </footer>
 
 <script>
+/* Scroll to top on refresh/load */
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+});
+
 /* rotating hero skill */
 const skills=["Microsoft Azure","Cloud Infrastructure","SQL","IAM","Enterprise Tools"];
 let i=0;
@@ -496,7 +501,7 @@ jsPDF:{unit:'in',format:'letter',orientation:'portrait'}
 }).save();
 });
 
-/* copy to clipboard functionality with check mark */
+/* copy to clipboard functionality with check mark for 1 sec */
 document.querySelectorAll('.copy-icon').forEach(icon => {
 icon.addEventListener('click', (e) => {
 e.stopPropagation();
@@ -505,7 +510,7 @@ navigator.clipboard.writeText(textToCopy).then(() => {
 const originalIconClass = icon.className;
 icon.className = 'fa-solid fa-check copy-icon'; // change to check
 setTimeout(() => {
-icon.className = originalIconClass; // revert back
+icon.className = originalIconClass; // revert back after 1 sec
 }, 1000);
 });
 });
