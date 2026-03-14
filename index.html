@@ -273,6 +273,15 @@ color:#38bdf8;
 cursor:pointer;
 transition:transform 0.3s, color 0.3s;
 }
+/* check animation */
+.check-animate{
+animation:checkPop 1s ease forwards;
+}
+@keyframes checkPop{
+0%{transform:scale(0);}
+50%{transform:scale(1.4);}
+100%{transform:scale(1);}
+}
 
 /* BACK TO TOP */
 #topBtn{
@@ -295,7 +304,6 @@ color:#94a3b8;
 font-size:14px;
 }
 </style>
-
 </head>
 <body>
 
@@ -502,14 +510,14 @@ jsPDF:{unit:'in',format:'letter',orientation:'portrait'}
 }).save();
 });
 
-/* copy to clipboard functionality with check mark for 1 sec */
+/* copy to clipboard functionality with animated check mark for 1 sec */
 document.querySelectorAll('.copy-icon').forEach(icon => {
 icon.addEventListener('click', (e) => {
 e.stopPropagation();
 const textToCopy = icon.getAttribute('data-copy');
 navigator.clipboard.writeText(textToCopy).then(() => {
 const originalIconClass = icon.className;
-icon.className = 'fa-solid fa-check copy-icon'; // change to check
+icon.className = 'fa-solid fa-check copy-icon check-animate'; // change to animated check
 setTimeout(() => {
 icon.className = originalIconClass; // revert back after 1 sec
 }, 1000);
