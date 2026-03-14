@@ -438,10 +438,11 @@ Microsoft Azure Fundamentals (AZ-900) — In Progress
 </footer>
 
 <script>
-/* Scroll to top on refresh/load */
-window.addEventListener('load', () => {
-  window.scrollTo(0, 0);
-});
+/* Prevent automatic jump to hash and scroll to top */
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
 
 /* rotating hero skill */
 const skills=["Microsoft Azure","Cloud Infrastructure","SQL","IAM","Enterprise Tools"];
